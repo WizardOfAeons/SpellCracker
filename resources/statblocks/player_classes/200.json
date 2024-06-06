@@ -1,0 +1,40 @@
+{
+	"name": "Gun Bunny",
+	"icon": "Class_200_Icon.png",
+	"avatar": "Class_200_Avatar.png",
+	"color": [1, 0, 1, 1],
+	"stat_block": {
+		"0": {"HP": 4, "AP": 3, "SP": 0},
+		"1": {"HP": 4, "AP": 4, "SP": 0},
+		"2": {"HP": 5, "AP": 4, "SP": 0},
+		"3": {"HP": 5, "AP": 5, "SP": 0},
+		"4": {"HP": 6, "AP": 5, "SP": 0},
+		"5": {"HP": 8, "AP": 7, "SP": 2},
+		"6": {"HP": 8, "AP": 8, "SP": 2},
+		"7": {"HP": 9, "AP": 8, "SP": 2},
+		"8": {"HP": 9, "AP": 9, "SP": 2},
+		"9": {"HP": 10, "AP": 9, "SP": 2},
+		"10": {"HP": 12, "AP": 11, "SP": 4},
+		"11": {"HP": 12, "AP": 12, "SP": 4},
+		"12": {"HP": 13, "AP": 12, "SP": 4},
+		"13": {"HP": 13, "AP": 13, "SP": 4},
+		"14": {"HP": 14, "AP": 13, "SP": 4},
+		"15": {"HP": 16, "AP": 15, "SP": 6},
+		"16": {"HP": 16, "AP": 16, "SP": 6},
+		"17": {"HP": 17, "AP": 16, "SP": 6},
+		"18": {"HP": 17, "AP": 17, "SP": 6},
+		"19": {"HP": 18, "AP": 17, "SP": 6},
+		"20": {"HP": 20, "AP": 19, "SP": 8}},
+	"skill_block": [
+		{"cost": 0, "effect": "+HP"},
+		{"cost": 0, "effect": "+AP"},
+		{"cost": 0, "effect": "+SP"},
+		{"cost": 0, "effect": "Text here."}
+	],
+	"ability_block": {
+		"0": {"A": "Option A Description"},
+		"5": {"A": "Option A Description", "B": "Option B Description"},
+		"10": {"A": "Option A Description", "B": "Option B Description"},
+		"15": {"A": "Option A Description", "B": "Option B Description"},
+		"20": {"A": "Option A Description"}}
+}

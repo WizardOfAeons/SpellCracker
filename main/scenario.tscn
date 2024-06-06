@@ -1,0 +1,928 @@
+[gd_scene load_steps=32 format=3 uid="uid://cnbbmhh03110m"]
+
+[ext_resource type="Script" path="res://main/scenario.gd" id="1_4j3al"]
+[ext_resource type="ButtonGroup" uid="uid://brlfp01f13ag2" path="res://main/button_groups/class_selection_button_group.tres" id="2_46t2d"]
+[ext_resource type="Texture2D" uid="uid://dhlq3v1xrpc86" path="res://resources/interface/main_background.jpeg" id="2_bmbbm"]
+[ext_resource type="Texture2D" uid="uid://d02iyha611q26" path="res://resources/interface/icons/elements/element_fire_icon.png" id="3_iqq3w"]
+[ext_resource type="Texture2D" uid="uid://d1lv5p81p7s53" path="res://resources/interface/icons/elements/element_earth_icon.png" id="4_7rrvj"]
+[ext_resource type="Texture2D" uid="uid://dp22oeqhjl2ic" path="res://resources/interface/player_character_ui/class_avatar_placeholder.png" id="5_hvyp1"]
+[ext_resource type="Texture2D" uid="uid://cnmdn0m4j8s33" path="res://resources/interface/icons/elements/element_water_icon.png" id="5_mecyp"]
+[ext_resource type="Texture2D" uid="uid://d275v2y3n3140" path="res://resources/interface/icons/elements/element_wind_icon.png" id="6_g1h06"]
+[ext_resource type="Texture2D" uid="uid://6lerfqmr8aqb" path="res://resources/interface/icons/elements/element_electric_icon.png" id="7_8bf5y"]
+[ext_resource type="Texture2D" uid="uid://kaqkjscpwum1" path="res://resources/interface/icons/elements/element_bio_icon.png" id="8_jytwt"]
+[ext_resource type="Texture2D" uid="uid://baitlhbgvugnt" path="res://resources/interface/icons/elements/element_nuclear_icon.png" id="9_8fbaf"]
+[ext_resource type="Texture2D" uid="uid://cfsa14ssgw58e" path="res://resources/interface/icons/elements/element_spacetime_icon.png" id="10_5gnjl"]
+[ext_resource type="Texture2D" uid="uid://bp7hkrrc3wfn1" path="res://resources/interface/icons/class/Class_700_Icon.png" id="11_k6boc"]
+[ext_resource type="Texture2D" uid="uid://bma4p4eecu13l" path="res://resources/interface/icons/class/Class_800_Icon.png" id="12_vcasw"]
+[ext_resource type="Texture2D" uid="uid://b88e4d1k6lnv" path="res://resources/interface/icons/class/Class_900_Icon.png" id="13_qxjnu"]
+[ext_resource type="Texture2D" uid="uid://dm33fra0pm3bi" path="res://resources/interface/icons/class/Class_1000_Icon.png" id="14_pnhwu"]
+[ext_resource type="Texture2D" uid="uid://dkeqj6ikb4nln" path="res://resources/interface/icons/class/Class_1100_Icon.png" id="15_4newl"]
+[ext_resource type="Texture2D" uid="uid://ba15cjvq5ho2i" path="res://resources/interface/icons/class/Class_1200_Icon.png" id="16_yjg88"]
+[ext_resource type="Texture2D" uid="uid://20c11ok03dja" path="res://resources/interface/icons/class/Class_1300_Icon.png" id="17_xs103"]
+[ext_resource type="Texture2D" uid="uid://c061swp01a6nn" path="res://resources/interface/icons/class/Class_1400_Icon.png" id="18_4xhhc"]
+[ext_resource type="Texture2D" uid="uid://blj4dcn2bbnl8" path="res://resources/interface/icons/class/Class_1500_Icon.png" id="19_k1k6u"]
+[ext_resource type="Texture2D" uid="uid://bx6vmcvwj8nw7" path="res://resources/interface/icons/class/Class_1600_Icon.png" id="20_04ofa"]
+[ext_resource type="Texture2D" uid="uid://6h5ginq3br47" path="res://resources/interface/icons/class/Class_1700_Icon.png" id="21_5x6d6"]
+[ext_resource type="Texture2D" uid="uid://dkyddorjvfaw3" path="res://resources/interface/icons/class/Class_1800_Icon.png" id="22_5pnih"]
+[ext_resource type="ButtonGroup" uid="uid://b478is63ilp4b" path="res://main/button_groups/character_level_selection_button_group.tres" id="22_735mu"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eu4ct"]
+load_path = "res://.godot/imported/Class_100_Icon.png-dd76c207e25ec7a3b48e5c5c8c737c83.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2s1d2"]
+load_path = "res://.godot/imported/Class_200_Icon.png-6dcf26bcfcdc031058bbe8e6df58b413.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jpf8d"]
+load_path = "res://.godot/imported/Class_300_Icon.png-7cc91db86474ca232a4e33e71686b88e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jgeu5"]
+load_path = "res://.godot/imported/Class_400_Icon.png-c766a4e191d3120da0eef70bfc975ec2.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v6ach"]
+load_path = "res://.godot/imported/Class_500_Icon.png-b07daecb78592a2070dbb566666d25d0.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_btaef"]
+load_path = "res://.godot/imported/Class_600_Icon.png-3db1c68dc580711a6020d650a3ffd659.ctex"
+
+[node name="Scenario" type="Node2D" groups=["Persist"]]
+script = ExtResource("1_4j3al")
+
+[node name="Background" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_bmbbm")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="Sections" type="VBoxContainer" parent="Background"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Top_Menu" type="Control" parent="Background/Sections"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="DropDown" type="MenuBar" parent="Background/Sections/Top_Menu"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 1
+offset_right = 287.0
+offset_bottom = 32.0
+
+[node name="Campaign" type="PopupMenu" parent="Background/Sections/Top_Menu/DropDown"]
+item_count = 12
+item_0/text = "Campaign"
+item_0/id = 0
+item_0/separator = true
+item_1/text = "Create"
+item_1/id = 1
+item_2/text = "Save"
+item_2/id = 2
+item_3/text = "Load"
+item_3/id = 3
+item_4/text = "Network"
+item_4/id = 4
+item_4/separator = true
+item_5/text = "Create"
+item_5/id = 5
+item_6/text = "Delete"
+item_6/id = 6
+item_7/text = "Characters"
+item_7/id = 7
+item_7/separator = true
+item_8/text = "Create"
+item_8/id = 8
+item_9/text = "Add"
+item_9/id = 9
+item_10/text = "Retire"
+item_10/id = 10
+item_11/text = "Delete"
+item_11/id = 11
+
+[node name="Scenario" type="PopupMenu" parent="Background/Sections/Top_Menu/DropDown"]
+item_count = 6
+item_0/text = "Scenario"
+item_0/id = 0
+item_0/separator = true
+item_1/text = "Load"
+item_1/id = 1
+item_2/text = "Custom"
+item_2/id = 2
+item_3/text = "Creatures"
+item_3/id = 3
+item_3/separator = true
+item_4/text = "Add"
+item_4/id = 4
+item_5/text = "Remove"
+item_5/id = 5
+
+[node name="Settings" type="PopupMenu" parent="Background/Sections/Top_Menu/DropDown"]
+
+[node name="Help" type="PopupMenu" parent="Background/Sections/Top_Menu/DropDown"]
+
+[node name="Play_Area" type="ScrollContainer" parent="Background/Sections"]
+custom_minimum_size = Vector2(1920, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Card_Mat" type="GridContainer" parent="Background/Sections/Play_Area"]
+custom_minimum_size = Vector2(1912, 600)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 10
+columns = 2
+
+[node name="Bottom_Menu" type="HBoxContainer" parent="Background/Sections"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="Round_Button" type="Button" parent="Background/Sections/Bottom_Menu"]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+text = "New Round"
+icon_alignment = 1
+
+[node name="Button" type="Button" parent="Background/Sections/Bottom_Menu"]
+layout_mode = 2
+disabled = true
+text = "Next"
+
+[node name="Round Tracker" type="Label" parent="Background/Sections/Bottom_Menu"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Element_Box" type="HBoxContainer" parent="Background/Sections/Bottom_Menu"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+alignment = 1
+
+[node name="Element_Fire" type="TextureButton" parent="Background/Sections/Bottom_Menu/Element_Box"]
+clip_children = 2
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("3_iqq3w")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="mask" type="ColorRect" parent="Background/Sections/Bottom_Menu/Element_Box/Element_Fire"]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+color = Color(0.0980392, 0.0980392, 0.0980392, 0.784314)
+
+[node name="Element_Earth" type="TextureButton" parent="Background/Sections/Bottom_Menu/Element_Box"]
+clip_children = 2
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("4_7rrvj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="mask" type="ColorRect" parent="Background/Sections/Bottom_Menu/Element_Box/Element_Earth"]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+color = Color(0.0980392, 0.0980392, 0.0980392, 0.784314)
+
+[node name="Element_Water" type="TextureButton" parent="Background/Sections/Bottom_Menu/Element_Box"]
+clip_children = 2
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("5_mecyp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="mask" type="ColorRect" parent="Background/Sections/Bottom_Menu/Element_Box/Element_Water"]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+color = Color(0.0980392, 0.0980392, 0.0980392, 0.784314)
+
+[node name="Element_Wind" type="TextureButton" parent="Background/Sections/Bottom_Menu/Element_Box"]
+clip_children = 2
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("6_g1h06")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="mask" type="ColorRect" parent="Background/Sections/Bottom_Menu/Element_Box/Element_Wind"]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+color = Color(0.0980392, 0.0980392, 0.0980392, 0.784314)
+
+[node name="Element_Electric" type="TextureButton" parent="Background/Sections/Bottom_Menu/Element_Box"]
+clip_children = 2
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("7_8bf5y")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="mask" type="ColorRect" parent="Background/Sections/Bottom_Menu/Element_Box/Element_Electric"]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+color = Color(0.0980392, 0.0980392, 0.0980392, 0.784314)
+
+[node name="Element_Bio" type="TextureButton" parent="Background/Sections/Bottom_Menu/Element_Box"]
+clip_children = 2
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("8_jytwt")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="mask" type="ColorRect" parent="Background/Sections/Bottom_Menu/Element_Box/Element_Bio"]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+color = Color(0.0980392, 0.0980392, 0.0980392, 0.784314)
+
+[node name="Element_Nuclear" type="TextureButton" parent="Background/Sections/Bottom_Menu/Element_Box"]
+clip_children = 2
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("9_8fbaf")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="mask" type="ColorRect" parent="Background/Sections/Bottom_Menu/Element_Box/Element_Nuclear"]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+color = Color(0.0980392, 0.0980392, 0.0980392, 0.784314)
+
+[node name="Element_Spacetime" type="TextureButton" parent="Background/Sections/Bottom_Menu/Element_Box"]
+clip_children = 2
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("10_5gnjl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="mask" type="ColorRect" parent="Background/Sections/Bottom_Menu/Element_Box/Element_Spacetime"]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+color = Color(0.0980392, 0.0980392, 0.0980392, 0.784314)
+
+[node name="Creature_Panel" type="PopupPanel" parent="."]
+initial_position = 1
+size = Vector2i(768, 1024)
+always_on_top = true
+min_size = Vector2i(768, 1024)
+max_size = Vector2i(768, 1024)
+
+[node name="Body" type="VBoxContainer" parent="Creature_Panel"]
+custom_minimum_size = Vector2(768, 1024)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 772.0
+offset_bottom = 1028.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="Creature_Panel/Body"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Creature_Panel/Body/Control"]
+custom_minimum_size = Vector2(121, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.5
+offset_right = 60.5
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "Creatures"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Creature_Panel/Body"]
+custom_minimum_size = Vector2(768, 0)
+layout_mode = 2
+columns = 6
+
+[node name="Beat_Security" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+text = "Beat Security"
+icon_alignment = 1
+
+[node name="Gutter_Shaman" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+text = "Gutter Shaman"
+icon_alignment = 1
+
+[node name="Spirit_Of_Man" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+text = "Spirit of Man"
+icon_alignment = 1
+
+[node name="Spirit_Of_Toxicity" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+text = "Spirit of Toxicity"
+icon_alignment = 1
+
+[node name="Street_Pawang" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+text = "Street Pawang"
+icon_alignment = 1
+
+[node name="Street_Punk" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+text = "Street Punk"
+icon_alignment = 1
+
+[node name="Street_Robber" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+text = "Street Robber"
+icon_alignment = 1
+
+[node name="Button8" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Falcon"
+icon_alignment = 1
+
+[node name="Button9" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+text = "Hawk"
+icon_alignment = 1
+
+[node name="Button10" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Flamingo"
+icon_alignment = 1
+
+[node name="Button11" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Chicken"
+icon_alignment = 1
+
+[node name="Button12" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Dove"
+icon_alignment = 1
+
+[node name="Button13" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+text = "Emu"
+icon_alignment = 1
+
+[node name="Button14" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Loon"
+icon_alignment = 1
+
+[node name="Button15" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Kookaburra"
+icon_alignment = 1
+
+[node name="Button16" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Pheasant"
+icon_alignment = 1
+
+[node name="Button17" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+text = "Duck"
+icon_alignment = 1
+
+[node name="Button18" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Curassow"
+icon_alignment = 1
+
+[node name="Button19" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Cockatoo"
+icon_alignment = 1
+
+[node name="Button20" type="Button" parent="Creature_Panel/Body/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Sparrow"
+icon_alignment = 1
+
+[node name="Create_Character_Panel" type="PopupPanel" parent="."]
+initial_position = 1
+size = Vector2i(440, 431)
+always_on_top = true
+min_size = Vector2i(440, 400)
+max_size = Vector2i(440, 700)
+
+[node name="Body" type="VBoxContainer" parent="Create_Character_Panel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 436.0
+offset_bottom = 427.0
+
+[node name="Title" type="HBoxContainer" parent="Create_Character_Panel/Body"]
+layout_mode = 2
+
+[node name="Title_Label" type="Label" parent="Create_Character_Panel/Body/Title"]
+layout_mode = 2
+text = "Character Creation"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cancel_Button" type="TextureButton" parent="Create_Character_Panel/Body/Title"]
+layout_mode = 2
+
+[node name="Character_Name" type="LineEdit" parent="Create_Character_Panel/Body"]
+layout_mode = 2
+placeholder_text = "Character Name"
+alignment = 1
+max_length = 40
+
+[node name="Class_Label" type="Label" parent="Create_Character_Panel/Body"]
+layout_mode = 2
+text = "Available Classes :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Default_Classes" type="HBoxContainer" parent="Create_Character_Panel/Body"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Class_100" type="TextureButton" parent="Create_Character_Panel/Body/Default_Classes"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_46t2d")
+texture_normal = SubResource("CompressedTexture2D_eu4ct")
+texture_pressed = ExtResource("5_hvyp1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_200" type="TextureButton" parent="Create_Character_Panel/Body/Default_Classes"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_46t2d")
+texture_normal = SubResource("CompressedTexture2D_2s1d2")
+texture_pressed = ExtResource("5_hvyp1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_300" type="TextureButton" parent="Create_Character_Panel/Body/Default_Classes"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_46t2d")
+texture_normal = SubResource("CompressedTexture2D_jpf8d")
+texture_pressed = ExtResource("5_hvyp1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_400" type="TextureButton" parent="Create_Character_Panel/Body/Default_Classes"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_46t2d")
+texture_normal = SubResource("CompressedTexture2D_jgeu5")
+texture_pressed = ExtResource("5_hvyp1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_500" type="TextureButton" parent="Create_Character_Panel/Body/Default_Classes"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_46t2d")
+texture_normal = SubResource("CompressedTexture2D_v6ach")
+texture_pressed = ExtResource("5_hvyp1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_600" type="TextureButton" parent="Create_Character_Panel/Body/Default_Classes"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_46t2d")
+texture_normal = SubResource("CompressedTexture2D_btaef")
+texture_pressed = ExtResource("5_hvyp1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Unlockable_Classes" type="GridContainer" parent="Create_Character_Panel/Body"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 8
+
+[node name="Class_700" type="TextureButton" parent="Create_Character_Panel/Body/Unlockable_Classes"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_46t2d")
+texture_normal = ExtResource("11_k6boc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_800" type="TextureButton" parent="Create_Character_Panel/Body/Unlockable_Classes"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_46t2d")
+texture_normal = ExtResource("12_vcasw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_900" type="TextureButton" parent="Create_Character_Panel/Body/Unlockable_Classes"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_46t2d")
+texture_normal = ExtResource("13_qxjnu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_1000" type="TextureButton" parent="Create_Character_Panel/Body/Unlockable_Classes"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_46t2d")
+texture_normal = ExtResource("14_pnhwu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_1100" type="TextureButton" parent="Create_Character_Panel/Body/Unlockable_Classes"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_46t2d")
+texture_normal = ExtResource("15_4newl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_1200" type="TextureButton" parent="Create_Character_Panel/Body/Unlockable_Classes"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_46t2d")
+texture_normal = ExtResource("16_yjg88")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_1300" type="TextureButton" parent="Create_Character_Panel/Body/Unlockable_Classes"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_46t2d")
+texture_normal = ExtResource("17_xs103")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_1400" type="TextureButton" parent="Create_Character_Panel/Body/Unlockable_Classes"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_46t2d")
+texture_normal = ExtResource("18_4xhhc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_1500" type="TextureButton" parent="Create_Character_Panel/Body/Unlockable_Classes"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_46t2d")
+texture_normal = ExtResource("19_k1k6u")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_1600" type="TextureButton" parent="Create_Character_Panel/Body/Unlockable_Classes"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_46t2d")
+texture_normal = ExtResource("20_04ofa")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_1700" type="TextureButton" parent="Create_Character_Panel/Body/Unlockable_Classes"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_46t2d")
+texture_normal = ExtResource("21_5x6d6")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_1800" type="TextureButton" parent="Create_Character_Panel/Body/Unlockable_Classes"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_46t2d")
+texture_normal = ExtResource("22_5pnih")
+texture_pressed = ExtResource("5_hvyp1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Level_Label" type="Label" parent="Create_Character_Panel/Body"]
+layout_mode = 2
+text = "Starting Level :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Character_Level" type="GridContainer" parent="Create_Character_Panel/Body"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 7
+
+[node name="Level_0" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+custom_minimum_size = Vector2(31, 31)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "0"
+
+[node name="Level_1" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "1"
+
+[node name="Level_2" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "2"
+
+[node name="Level_3" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "3"
+
+[node name="Level_4" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "4"
+
+[node name="Level_5" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "5"
+
+[node name="Level_6" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "6"
+
+[node name="Level_7" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "7"
+
+[node name="Level_8" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "8"
+
+[node name="Level_9" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "9"
+
+[node name="Level_10" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "10"
+
+[node name="Level_11" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "11"
+
+[node name="Level_12" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "12"
+
+[node name="Level_13" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "13"
+
+[node name="Level_14" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "14"
+
+[node name="Level_15" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "15"
+
+[node name="Level_16" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "16"
+
+[node name="Level_17" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "17"
+
+[node name="Level_18" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "18"
+
+[node name="Level_19" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "19"
+
+[node name="Level_20" type="Button" parent="Create_Character_Panel/Body/Character_Level"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_735mu")
+text = "20"
+
+[node name="Bottom" type="HBoxContainer" parent="Create_Character_Panel/Body"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Create_Button" type="Button" parent="Create_Character_Panel/Body/Bottom"]
+layout_mode = 2
+text = "Create"
+
+[node name="Cancel_Button" type="Button" parent="Create_Character_Panel/Body/Bottom"]
+layout_mode = 2
+text = "Cancel"
+
+[connection signal="id_pressed" from="Background/Sections/Top_Menu/DropDown/Campaign" to="." method="_on_campaign_id_pressed"]
+[connection signal="id_pressed" from="Background/Sections/Top_Menu/DropDown/Scenario" to="." method="_on_scenario_id_pressed"]
+[connection signal="pressed" from="Background/Sections/Bottom_Menu/Round_Button" to="." method="_on_round_button_pressed"]
+[connection signal="pressed" from="Background/Sections/Bottom_Menu/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Background/Sections/Bottom_Menu/Element_Box/Element_Fire" to="." method="_on_element_fire_pressed"]
+[connection signal="pressed" from="Background/Sections/Bottom_Menu/Element_Box/Element_Earth" to="." method="_on_element_earth_pressed"]
+[connection signal="pressed" from="Background/Sections/Bottom_Menu/Element_Box/Element_Water" to="." method="_on_element_water_pressed"]
+[connection signal="pressed" from="Background/Sections/Bottom_Menu/Element_Box/Element_Wind" to="." method="_on_element_wind_pressed"]
+[connection signal="pressed" from="Background/Sections/Bottom_Menu/Element_Box/Element_Electric" to="." method="_on_element_electric_pressed"]
+[connection signal="pressed" from="Background/Sections/Bottom_Menu/Element_Box/Element_Bio" to="." method="_on_element_bio_pressed"]
+[connection signal="pressed" from="Background/Sections/Bottom_Menu/Element_Box/Element_Nuclear" to="." method="_on_element_nuclear_pressed"]
+[connection signal="pressed" from="Background/Sections/Bottom_Menu/Element_Box/Element_Spacetime" to="." method="_on_element_spacetime_pressed"]
+[connection signal="toggled" from="Creature_Panel/Body/GridContainer/Beat_Security" to="." method="_on_beat_security_toggled"]
+[connection signal="toggled" from="Creature_Panel/Body/GridContainer/Gutter_Shaman" to="." method="_on_gutter_shaman_toggled"]
+[connection signal="toggled" from="Creature_Panel/Body/GridContainer/Spirit_Of_Man" to="." method="_on_spirit_of_man_toggled"]
+[connection signal="toggled" from="Creature_Panel/Body/GridContainer/Spirit_Of_Toxicity" to="." method="_on_spirit_of_toxicity_toggled"]
+[connection signal="toggled" from="Creature_Panel/Body/GridContainer/Street_Pawang" to="." method="_on_street_pawang_toggled"]
+[connection signal="toggled" from="Creature_Panel/Body/GridContainer/Street_Punk" to="." method="_on_street_punk_toggled"]
+[connection signal="toggled" from="Creature_Panel/Body/GridContainer/Street_Robber" to="." method="_on_street_robber_toggled"]
+[connection signal="text_changed" from="Create_Character_Panel/Body/Character_Name" to="." method="_on_character_name_text_changed"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Default_Classes/Class_100" to="." method="_on_class_100_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Default_Classes/Class_200" to="." method="_on_class_200_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Default_Classes/Class_300" to="." method="_on_class_300_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Default_Classes/Class_400" to="." method="_on_class_400_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Default_Classes/Class_500" to="." method="_on_class_500_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Default_Classes/Class_600" to="." method="_on_class_600_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Unlockable_Classes/Class_700" to="." method="_on_class_700_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Unlockable_Classes/Class_800" to="." method="_on_class_800_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Unlockable_Classes/Class_900" to="." method="_on_class_900_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Unlockable_Classes/Class_1000" to="." method="_on_class_1000_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Unlockable_Classes/Class_1100" to="." method="_on_class_1100_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Unlockable_Classes/Class_1200" to="." method="_on_class_1200_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Unlockable_Classes/Class_1300" to="." method="_on_class_1300_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Unlockable_Classes/Class_1400" to="." method="_on_class_1400_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Unlockable_Classes/Class_1500" to="." method="_on_class_1500_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Unlockable_Classes/Class_1600" to="." method="_on_class_1600_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Unlockable_Classes/Class_1700" to="." method="_on_class_1700_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Unlockable_Classes/Class_1800" to="." method="_on_class_1800_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_0" to="." method="_on_level_0_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_1" to="." method="_on_level_1_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_2" to="." method="_on_level_2_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_3" to="." method="_on_level_3_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_4" to="." method="_on_level_4_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_5" to="." method="_on_level_5_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_6" to="." method="_on_level_6_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_7" to="." method="_on_level_7_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_8" to="." method="_on_level_8_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_9" to="." method="_on_level_9_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_10" to="." method="_on_level_10_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_11" to="." method="_on_level_11_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_12" to="." method="_on_level_12_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_13" to="." method="_on_level_13_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_14" to="." method="_on_level_14_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_15" to="." method="_on_level_15_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_16" to="." method="_on_level_16_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_17" to="." method="_on_level_17_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_18" to="." method="_on_level_18_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_19" to="." method="_on_level_19_toggled"]
+[connection signal="toggled" from="Create_Character_Panel/Body/Character_Level/Level_20" to="." method="_on_level_20_toggled"]
+[connection signal="pressed" from="Create_Character_Panel/Body/Bottom/Create_Button" to="." method="_on_create_button_pressed"]
+[connection signal="pressed" from="Create_Character_Panel/Body/Bottom/Cancel_Button" to="." method="_on_cancel_button_pressed"]

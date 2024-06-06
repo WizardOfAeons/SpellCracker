@@ -1,0 +1,323 @@
+[gd_scene load_steps=6 format=3 uid="uid://smn2jd8rfty1"]
+
+[ext_resource type="Script" path="res://main/campaign_creation.gd" id="1_4grj4"]
+[ext_resource type="Texture2D" uid="uid://2tq8gg7tlv7l" path="res://resources/interface/campaign_background.png" id="2_nvh1w"]
+[ext_resource type="ButtonGroup" uid="uid://b5tic6tn3xvhg" path="res://main/button_groups/Campaign_Choice_Button_Group.tres" id="3_k1psh"]
+[ext_resource type="Texture2D" uid="uid://cx3oisntorlcg" path="res://resources/interface/spellcracker_icon.png" id="4_graqd"]
+[ext_resource type="ButtonGroup" uid="uid://d1i8mh02hu714" path="res://main/button_groups/Difficulty_Button_Group.tres" id="5_35j22"]
+
+[node name="campaign_creation" type="Node2D"]
+script = ExtResource("1_4grj4")
+
+[node name="Background" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_nvh1w")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="Return_Button" type="Button" parent="Background"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 80.0
+grow_horizontal = 0
+text = "Go Back"
+
+[node name="Options" type="VBoxContainer" parent="Background"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -367.0
+offset_right = 500.0
+offset_bottom = 367.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Columns" type="HBoxContainer" parent="Background/Options"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Campaign" type="VBoxContainer" parent="Background/Options/Columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Title" type="Label" parent="Background/Options/Columns/Campaign"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "New Campaign"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="Background/Options/Columns/Campaign"]
+layout_mode = 2
+text = "A Campaign consists of a collection of scenarios, thematically and narratively connected together.
+
+This will also change the items, playable characters, and other options that can be unlocked throughout the game."
+fit_content = true
+
+[node name="Campaign_Name" type="HBoxContainer" parent="Background/Options/Columns/Campaign"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Background/Options/Columns/Campaign/Campaign_Name"]
+layout_mode = 2
+text = "Campaign Name:"
+
+[node name="Campaign_Name_LineEdit" type="LineEdit" parent="Background/Options/Columns/Campaign/Campaign_Name"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Enter Campaign Name"
+max_length = 30
+
+[node name="Campaign_Label" type="Label" parent="Background/Options/Columns/Campaign"]
+layout_mode = 2
+text = "Choose your Campaign"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Campaign_Choice" type="GridContainer" parent="Background/Options/Columns/Campaign"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 5
+
+[node name="Label" type="Label" parent="Background/Options/Columns/Campaign/Campaign_Choice"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 21
+text = "Original
+Selected"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Original_Campaign_Choice" type="TextureButton" parent="Background/Options/Columns/Campaign/Campaign_Choice/Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+focus_mode = 1
+toggle_mode = true
+button_pressed = true
+action_mode = 0
+button_mask = 7
+button_group = ExtResource("3_k1psh")
+texture_normal = ExtResource("4_graqd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Campaign_Difficulty" type="HBoxContainer" parent="Background/Options/Columns/Campaign"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Background/Options/Columns/Campaign/Campaign_Difficulty"]
+layout_mode = 2
+text = "Starting Difficulty:"
+
+[node name="Gofer_Button" type="Button" parent="Background/Options/Columns/Campaign/Campaign_Difficulty"]
+layout_mode = 2
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("5_35j22")
+text = "Gofer"
+
+[node name="Street_Thug_Button" type="Button" parent="Background/Options/Columns/Campaign/Campaign_Difficulty"]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+action_mode = 0
+button_group = ExtResource("5_35j22")
+text = "Street Thug"
+
+[node name="Runner_Button" type="Button" parent="Background/Options/Columns/Campaign/Campaign_Difficulty"]
+layout_mode = 2
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("5_35j22")
+text = "Runner"
+
+[node name="Mercenary_Button" type="Button" parent="Background/Options/Columns/Campaign/Campaign_Difficulty"]
+layout_mode = 2
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("5_35j22")
+text = "Mercenary"
+
+[node name="Difficulty_Description" type="RichTextLabel" parent="Background/Options/Columns/Campaign"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]Street Thug[/b]:
+
+Scenario Level Modifier : [b][color=FFD700]0[/color][/b]
+
+Creatures, Traps and Conditions gain no BONUS or MALUS. This is how the game is meant to be played."
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="Difficulty_Label" type="Label" parent="Background/Options/Columns/Campaign"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Note that campaign's difficulty can be changed at any point while playing the game."
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Network" type="VBoxContainer" parent="Background/Options/Columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Title" type="Label" parent="Background/Options/Columns/Network"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "New Network"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="RichTextLabel" parent="Background/Options/Columns/Network"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Your [b]NETWORK[/b] represents your team of mercenaries and experts. New characters created during your campaign will gain more assets and a higher starting level depending on your [b]NETWORK[/b]'s progress."
+fit_content = true
+
+[node name="Network_Name" type="HBoxContainer" parent="Background/Options/Columns/Network"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Background/Options/Columns/Network/Network_Name"]
+layout_mode = 2
+text = "Network Name:"
+
+[node name="Network_Name_LineEdit" type="LineEdit" parent="Background/Options/Columns/Network/Network_Name"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Enter Network Name"
+max_length = 30
+
+[node name="Description_Players" type="RichTextLabel" parent="Background/Options/Columns/Network"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]SPELL CRACKER[/b] is a [b]COOPERATIVE[/b] game meant to be played with at least [b]2[/b] players and up to [b]4[/b]. While it is possible to play solo (with a single player playing two or more characters), you should create [b]one player per character[/b] that will be part of your starting [b]NETWORK[/b].
+
+As you will discover while playing the game, [b]certain aspects of character progression are tied to the player.[/b] If you would like to add more players to your [b]NETWORK[/b] over time, you will be able to do so over to your [b]NETWORK[/b] page.
+
+We hope you have a great time exploring the streets of a not-so-distant future Earth with Scifi and Magic."
+fit_content = true
+autowrap_mode = 2
+
+[node name="Player_1" type="HBoxContainer" parent="Background/Options/Columns/Network"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Background/Options/Columns/Network/Player_1"]
+layout_mode = 2
+text = "Player 1:"
+
+[node name="Player_1_Name" type="LineEdit" parent="Background/Options/Columns/Network/Player_1"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "First Player Name"
+max_length = 40
+
+[node name="Player_2" type="HBoxContainer" parent="Background/Options/Columns/Network"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Background/Options/Columns/Network/Player_2"]
+layout_mode = 2
+text = "Player 2:"
+
+[node name="Player_2_Name" type="LineEdit" parent="Background/Options/Columns/Network/Player_2"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Second Player Name"
+max_length = 40
+
+[node name="Player_3" type="HBoxContainer" parent="Background/Options/Columns/Network"]
+layout_mode = 2
+
+[node name="P3_Toggle" type="CheckButton" parent="Background/Options/Columns/Network/Player_3"]
+layout_mode = 2
+text = "Player 3:"
+
+[node name="Player_3_Name" type="LineEdit" parent="Background/Options/Columns/Network/Player_3"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Third Player Name"
+max_length = 40
+
+[node name="Player_4" type="HBoxContainer" parent="Background/Options/Columns/Network"]
+layout_mode = 2
+
+[node name="P4_Toggle" type="CheckButton" parent="Background/Options/Columns/Network/Player_4"]
+layout_mode = 2
+text = "Player 4:"
+
+[node name="Player_4_Name" type="LineEdit" parent="Background/Options/Columns/Network/Player_4"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Fourth Player Name"
+max_length = 40
+
+[node name="Checks" type="HBoxContainer" parent="Background/Options"]
+layout_mode = 2
+
+[node name="Campaign_Checks" type="RichTextLabel" parent="Background/Options/Checks"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=red]Missing a Campaign Name.[/color]
+[color=red]Choose a campaign.[/color]
+Campaign Difficulty is [color=FFD700][b]Street Thug[/b][/color]."
+fit_content = true
+
+[node name="Network_Checks" type="RichTextLabel" parent="Background/Options/Checks"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=red]Missing a Network Name.[/color]
+[color=red]All Players require a name.[/color]"
+fit_content = true
+
+[node name="Button_Create_Campaign" type="Button" parent="Background/Options"]
+layout_mode = 2
+disabled = true
+text = "Create Campaign"
+
+[connection signal="pressed" from="Background/Return_Button" to="." method="_on_return_button_pressed"]
+[connection signal="text_changed" from="Background/Options/Columns/Campaign/Campaign_Name/Campaign_Name_LineEdit" to="." method="_on_campaign_name_line_edit_text_changed"]
+[connection signal="toggled" from="Background/Options/Columns/Campaign/Campaign_Choice/Label/Original_Campaign_Choice" to="." method="_on_original_campaign_choice_toggled"]
+[connection signal="toggled" from="Background/Options/Columns/Campaign/Campaign_Difficulty/Gofer_Button" to="." method="_on_gofer_button_toggled"]
+[connection signal="toggled" from="Background/Options/Columns/Campaign/Campaign_Difficulty/Street_Thug_Button" to="." method="_on_street_thug_button_toggled"]
+[connection signal="toggled" from="Background/Options/Columns/Campaign/Campaign_Difficulty/Runner_Button" to="." method="_on_runner_button_toggled"]
+[connection signal="toggled" from="Background/Options/Columns/Campaign/Campaign_Difficulty/Mercenary_Button" to="." method="_on_mercenary_button_toggled"]
+[connection signal="text_changed" from="Background/Options/Columns/Network/Network_Name/Network_Name_LineEdit" to="." method="_on_network_name_line_edit_text_changed"]
+[connection signal="text_changed" from="Background/Options/Columns/Network/Player_1/Player_1_Name" to="." method="_on_player_1_name_text_changed"]
+[connection signal="text_changed" from="Background/Options/Columns/Network/Player_2/Player_2_Name" to="." method="_on_player_2_name_text_changed"]
+[connection signal="toggled" from="Background/Options/Columns/Network/Player_3/P3_Toggle" to="." method="_on_p_3_toggle_toggled"]
+[connection signal="text_changed" from="Background/Options/Columns/Network/Player_3/Player_3_Name" to="." method="_on_player_3_name_text_changed"]
+[connection signal="toggled" from="Background/Options/Columns/Network/Player_4/P4_Toggle" to="." method="_on_p_4_toggle_toggled"]
+[connection signal="text_changed" from="Background/Options/Columns/Network/Player_4/Player_4_Name" to="." method="_on_player_4_name_text_changed"]
+[connection signal="pressed" from="Background/Options/Button_Create_Campaign" to="." method="_on_button_create_campaign_pressed"]

@@ -1,0 +1,7 @@
+Beat Security:beat_security
+Gutter Shaman:gutter_shaman
+Man Spirit:man_spirit
+Street Pawang:street_pawang
+Street Punk:street_punk
+Street Robber:street_robber
+Toxic Spirit:toxic_spirit

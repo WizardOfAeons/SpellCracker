@@ -1,0 +1,4 @@
+[gd_resource type="ButtonGroup" format=3 uid="uid://b478is63ilp4b"]
+
+[resource]
+resource_name = "character_level_selection_button_group"

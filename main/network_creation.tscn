@@ -1,0 +1,399 @@
+[gd_scene load_steps=8 format=3 uid="uid://d25q3vbc74q0l"]
+
+[ext_resource type="Texture2D" uid="uid://2tq8gg7tlv7l" path="res://resources/interface/campaign_background.png" id="1_eu35m"]
+[ext_resource type="Texture2D" uid="uid://bqt4aq7evaa07" path="res://resources/interface/icons/class/Class_100_Icon.png" id="2_ofle8"]
+[ext_resource type="Texture2D" uid="uid://ysckmq8y5lvn" path="res://resources/interface/icons/class/Class_200_Icon.png" id="3_mvk2x"]
+[ext_resource type="Texture2D" uid="uid://cgn2p7y63w3ps" path="res://resources/interface/icons/class/Class_300_Icon.png" id="4_14v0w"]
+[ext_resource type="Texture2D" uid="uid://bhnkr3rrnibim" path="res://resources/interface/icons/class/Class_400_Icon.png" id="5_kd4nn"]
+[ext_resource type="Texture2D" uid="uid://b7noe1gq670e1" path="res://resources/interface/icons/class/Class_500_Icon.png" id="6_jac87"]
+[ext_resource type="Texture2D" uid="uid://dsbsemwq2tva3" path="res://resources/interface/icons/class/Class_600_Icon.png" id="7_sq6h3"]
+
+[node name="network" type="Node2D"]
+
+[node name="Background_Image" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_eu35m")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="Return_Button" type="Button" parent="Background_Image"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 80.0
+grow_horizontal = 0
+text = "Go Back"
+
+[node name="Scroll_box" type="ScrollContainer" parent="Background_Image"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Body" type="VBoxContainer" parent="Background_Image/Scroll_box"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Player_Grid" type="GridContainer" parent="Background_Image/Scroll_box/Body"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+columns = 2
+
+[node name="Player_1" type="VBoxContainer" parent="Background_Image/Scroll_box/Body/Player_Grid"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Name" type="Label" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_1"]
+layout_mode = 2
+text = "Player Name
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Character_Name" type="HBoxContainer" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_1"]
+layout_mode = 2
+
+[node name="Name_Label" type="Label" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_1/Character_Name"]
+layout_mode = 2
+text = "Character Name:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="P1_Name_Edit" type="LineEdit" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_1/Character_Name"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Enter Character Name..."
+max_length = 40
+
+[node name="Class_Select" type="HBoxContainer" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_1"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="100_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_1/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("2_ofle8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="200_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_1/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("3_mvk2x")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="300_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_1/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("4_14v0w")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="400_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_1/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("5_kd4nn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="500_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_1/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("6_jac87")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="600_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_1/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("7_sq6h3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_Description" type="RichTextLabel" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_1"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Description of the Starting Class:
+
+\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"
+
+"
+fit_content = true
+
+[node name="Player_2" type="VBoxContainer" parent="Background_Image/Scroll_box/Body/Player_Grid"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Name" type="Label" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_2"]
+layout_mode = 2
+text = "Player Name
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Character_Name" type="HBoxContainer" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_2"]
+layout_mode = 2
+
+[node name="Name_Label" type="Label" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_2/Character_Name"]
+layout_mode = 2
+text = "Character Name:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="P2_Name_Edit" type="LineEdit" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_2/Character_Name"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Enter Character Name..."
+max_length = 40
+
+[node name="Class_Select" type="HBoxContainer" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="100_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_2/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("2_ofle8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="200_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_2/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("3_mvk2x")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="300_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_2/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("4_14v0w")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="400_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_2/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("5_kd4nn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="500_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_2/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("6_jac87")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="600_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_2/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("7_sq6h3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_Description" type="RichTextLabel" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_2"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Description of the Starting Class:
+
+\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"
+
+"
+fit_content = true
+
+[node name="Player_3" type="VBoxContainer" parent="Background_Image/Scroll_box/Body/Player_Grid"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Name" type="Label" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_3"]
+layout_mode = 2
+text = "Player Name
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Character_Name" type="HBoxContainer" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_3"]
+layout_mode = 2
+
+[node name="Name_Label" type="Label" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_3/Character_Name"]
+layout_mode = 2
+text = "Character Name:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="P3_Name_Edit" type="LineEdit" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_3/Character_Name"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Enter Character Name..."
+max_length = 40
+
+[node name="Class_Select" type="HBoxContainer" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_3"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="100_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_3/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("2_ofle8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="200_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_3/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("3_mvk2x")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="300_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_3/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("4_14v0w")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="400_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_3/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("5_kd4nn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="500_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_3/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("6_jac87")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="600_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_3/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("7_sq6h3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_Description" type="RichTextLabel" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_3"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Description of the Starting Class:
+
+\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"
+
+"
+fit_content = true
+
+[node name="Player_4" type="VBoxContainer" parent="Background_Image/Scroll_box/Body/Player_Grid"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Name" type="Label" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_4"]
+layout_mode = 2
+text = "Player Name
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Character_Name" type="HBoxContainer" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_4"]
+layout_mode = 2
+
+[node name="Name_Label" type="Label" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_4/Character_Name"]
+layout_mode = 2
+text = "Character Name:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="P4_Name_Edit" type="LineEdit" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_4/Character_Name"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Enter Character Name..."
+max_length = 40
+
+[node name="Class_Select" type="HBoxContainer" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_4"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="100_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_4/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("2_ofle8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="200_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_4/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("3_mvk2x")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="300_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_4/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("4_14v0w")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="400_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_4/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("5_kd4nn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="500_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_4/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("6_jac87")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="600_Button" type="TextureButton" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_4/Class_Select"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+texture_normal = ExtResource("7_sq6h3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Class_Description" type="RichTextLabel" parent="Background_Image/Scroll_box/Body/Player_Grid/Player_4"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Description of the Starting Class:
+
+\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"
+
+"
+fit_content = true
+
+[node name="Button" type="Button" parent="Background_Image/Scroll_box/Body"]
+layout_mode = 2
+text = "Begin Campaign"

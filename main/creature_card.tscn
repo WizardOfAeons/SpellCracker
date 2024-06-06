@@ -1,0 +1,724 @@
+[gd_scene load_steps=8 format=3 uid="uid://da2kb1wvu7ok7"]
+
+[ext_resource type="Script" path="res://main/creature_card.gd" id="1_02rm5"]
+[ext_resource type="Texture2D" uid="uid://ctgopmhfj8yc4" path="res://resources/interface/creatures_ui/Elite_Background_Placeholder.png" id="2_152n0"]
+[ext_resource type="Texture2D" uid="uid://8gguo2xni057" path="res://resources/interface/buttons/add_button.png" id="3_agrup"]
+[ext_resource type="Texture2D" uid="uid://dgjldq8vktxwj" path="res://resources/interface/buttons/add_button_hover.png" id="4_xjkgk"]
+[ext_resource type="Texture2D" uid="uid://d1wlvi57pg3dq" path="res://resources/interface/creatures_ui/Normal_Background_Placeholder.png" id="5_0rnro"]
+[ext_resource type="Texture2D" uid="uid://b8ytb04i4u6jg" path="res://resources/interface/creatures_ui/Minion_Background_Placeholder.png" id="6_eyyrc"]
+[ext_resource type="ButtonGroup" uid="uid://bykdgches60sg" path="res://main/button_groups/Add_Mini_Type_Button_Group.tres" id="7_htd3u"]
+
+[node name="Creature_Card" type="Control" groups=["Persist", "Round"]]
+custom_minimum_size = Vector2(740, 460)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 740.0
+offset_bottom = 460.0
+script = ExtResource("1_02rm5")
+
+[node name="Card_Body" type="PanelContainer" parent="."]
+z_as_relative = false
+custom_minimum_size = Vector2(740, 220)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Ability_Block" type="Control" parent="Card_Body"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Background" type="TextureRect" parent="Card_Body/Ability_Block"]
+custom_minimum_size = Vector2(225, 220)
+layout_mode = 0
+offset_left = 150.0
+offset_right = 375.0
+offset_bottom = 220.0
+mouse_filter = 2
+
+[node name="Ability" type="VBoxContainer" parent="Card_Body/Ability_Block/Background"]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_right = 112.5
+offset_bottom = 180.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Creature_Name" type="Label" parent="Card_Body/Ability_Block/Background/Ability"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Default Creature Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+clip_text = true
+
+[node name="Line_1" type="RichTextLabel" parent="Card_Body/Ability_Block/Background/Ability"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+bbcode_enabled = true
+text = "Line 1"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+
+[node name="Line_2" type="RichTextLabel" parent="Card_Body/Ability_Block/Background/Ability"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+bbcode_enabled = true
+text = "Line 2"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+
+[node name="Line_3" type="RichTextLabel" parent="Card_Body/Ability_Block/Background/Ability"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+bbcode_enabled = true
+text = "Line 3"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+
+[node name="Line_4" type="RichTextLabel" parent="Card_Body/Ability_Block/Background/Ability"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+bbcode_enabled = true
+text = "Line 4"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+
+[node name="Line_5" type="RichTextLabel" parent="Card_Body/Ability_Block/Background/Ability"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+bbcode_enabled = true
+text = "Line 5"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+
+[node name="Stat_Block_Control" type="Control" parent="Card_Body"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Stat_Block_Columns" type="HBoxContainer" parent="Card_Body/Stat_Block_Control"]
+custom_minimum_size = Vector2(360, 220)
+layout_mode = 0
+offset_left = 377.0
+offset_right = 737.0
+offset_bottom = 220.0
+mouse_filter = 2
+
+[node name="Elite_Background" type="TextureRect" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+texture = ExtResource("2_152n0")
+expand_mode = 1
+
+[node name="Stat_Block_Elite" type="VBoxContainer" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Elite_Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 180.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Top_Elite" type="HBoxContainer" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Elite_Background/Stat_Block_Elite"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="Type" type="RichTextLabel" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Elite_Background/Stat_Block_Elite/Top_Elite"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "Elite"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Add_Elite" type="TextureButton" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Elite_Background/Stat_Block_Elite/Top_Elite"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+button_mask = 3
+texture_normal = ExtResource("3_agrup")
+texture_pressed = ExtResource("3_agrup")
+texture_hover = ExtResource("4_xjkgk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Armor" type="RichTextLabel" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Elite_Background/Stat_Block_Elite"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[img=30x30]res://resources/interface/icons/stats/armor_point_icon.png[/img] 000"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Shield" type="RichTextLabel" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Elite_Background/Stat_Block_Elite"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[img=30x30]res://resources/interface/icons/stats/shield_point_icon.png[/img] 000"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Health" type="RichTextLabel" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Elite_Background/Stat_Block_Elite"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[img=30x30]res://resources/interface/icons/stats/health_point_icon.png[/img] 000"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Attack" type="RichTextLabel" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Elite_Background/Stat_Block_Elite"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[img=30x30]res://resources/interface/icons/stats/physical_attack_icon.png[/img] 00 [img=30x30]res://resources/interface/icons/stats/range_icon.png[/img] 00"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Move" type="RichTextLabel" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Elite_Background/Stat_Block_Elite"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[img=30x30]res://resources/interface/icons/stats/movement_icon.png[/img] 0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Normal_Background" type="TextureRect" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+texture = ExtResource("5_0rnro")
+
+[node name="Stat_Block_Normal" type="VBoxContainer" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Normal_Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 180.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Top_Normal" type="HBoxContainer" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Normal_Background/Stat_Block_Normal"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="Type" type="RichTextLabel" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Normal_Background/Stat_Block_Normal/Top_Normal"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "Normal"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Add_Normal" type="TextureButton" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Normal_Background/Stat_Block_Normal/Top_Normal"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+button_mask = 3
+texture_normal = ExtResource("3_agrup")
+texture_pressed = ExtResource("3_agrup")
+texture_hover = ExtResource("4_xjkgk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Armor" type="RichTextLabel" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Normal_Background/Stat_Block_Normal"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[img=30x30]res://resources/interface/icons/stats/armor_point_icon.png[/img] 000"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Shield" type="RichTextLabel" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Normal_Background/Stat_Block_Normal"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[img=30x30]res://resources/interface/icons/stats/shield_point_icon.png[/img] 000"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Health" type="RichTextLabel" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Normal_Background/Stat_Block_Normal"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[img=30x30]res://resources/interface/icons/stats/health_point_icon.png[/img] 000"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Attack" type="RichTextLabel" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Normal_Background/Stat_Block_Normal"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[img=30x30]res://resources/interface/icons/stats/physical_attack_icon.png[/img] 00 [img=30x30]res://resources/interface/icons/stats/range_icon.png[/img] 00"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Move" type="RichTextLabel" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Normal_Background/Stat_Block_Normal"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[img=30x30]res://resources/interface/icons/stats/movement_icon.png[/img] 0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Minion_Background" type="TextureRect" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+texture = ExtResource("6_eyyrc")
+
+[node name="Stat_Block_Minion" type="VBoxContainer" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Minion_Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 180.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Top_Minion" type="HBoxContainer" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Minion_Background/Stat_Block_Minion"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="Type" type="RichTextLabel" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Minion_Background/Stat_Block_Minion/Top_Minion"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "Minion"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Add_Minion" type="TextureButton" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Minion_Background/Stat_Block_Minion/Top_Minion"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+button_mask = 3
+texture_normal = ExtResource("3_agrup")
+texture_pressed = ExtResource("3_agrup")
+texture_hover = ExtResource("4_xjkgk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Armor" type="RichTextLabel" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Minion_Background/Stat_Block_Minion"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[img=30x30]res://resources/interface/icons/stats/armor_point_icon.png[/img] 000"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Shield" type="RichTextLabel" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Minion_Background/Stat_Block_Minion"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[img=30x30]res://resources/interface/icons/stats/shield_point_icon.png[/img] 000"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Health" type="RichTextLabel" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Minion_Background/Stat_Block_Minion"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[img=30x30]res://resources/interface/icons/stats/health_point_icon.png[/img] 000"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Attack" type="RichTextLabel" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Minion_Background/Stat_Block_Minion"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[img=30x30]res://resources/interface/icons/stats/physical_attack_icon.png[/img] 00 [img=30x30]res://resources/interface/icons/stats/range_icon.png[/img] 00"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Move" type="RichTextLabel" parent="Card_Body/Stat_Block_Control/Stat_Block_Columns/Minion_Background/Stat_Block_Minion"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "[img=30x30]res://resources/interface/icons/stats/movement_icon.png[/img] 0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 0
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+
+[node name="Avatar_Control" type="Control" parent="Card_Body"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Avatar" type="TextureRect" parent="Card_Body/Avatar_Control"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+offset_right = 128.0
+offset_bottom = 128.0
+mouse_filter = 2
+expand_mode = 1
+flip_h = true
+
+[node name="Speed_Label" type="Label" parent="Card_Body/Avatar_Control"]
+custom_minimum_size = Vector2(150, 52)
+layout_mode = 2
+offset_top = 150.0
+offset_right = 150.0
+offset_bottom = 202.0
+theme_override_font_sizes/font_size = 48
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Minis_Rows" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(740, 0)
+layout_mode = 0
+offset_top = 220.0
+offset_right = 740.0
+offset_bottom = 460.0
+
+[node name="Minis_Row_1" type="HBoxContainer" parent="Minis_Rows"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Minis_Row_2" type="HBoxContainer" parent="Minis_Rows"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AddMinis_Popup" type="PopupPanel" parent="."]
+initial_position = 1
+size = Vector2i(324, 180)
+always_on_top = true
+max_size = Vector2i(324, 180)
+
+[node name="AddMinis_Body" type="VBoxContainer" parent="AddMinis_Popup"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 320.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AddMinis_TypeBox" type="HBoxContainer" parent="AddMinis_Popup/AddMinis_Body"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Elite_Button" type="Button" parent="AddMinis_Popup/AddMinis_Body/AddMinis_TypeBox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("7_htd3u")
+text = "Elite"
+
+[node name="Normal_Button" type="Button" parent="AddMinis_Popup/AddMinis_Body/AddMinis_TypeBox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("7_htd3u")
+text = "Normal"
+
+[node name="Minion_Button" type="Button" parent="AddMinis_Popup/AddMinis_Body/AddMinis_TypeBox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("7_htd3u")
+text = "Minion"
+
+[node name="AddMinis_ID_TopRow" type="HBoxContainer" parent="AddMinis_Popup/AddMinis_Body"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ID_1" type="Button" parent="AddMinis_Popup/AddMinis_Body/AddMinis_ID_TopRow"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+toggle_mode = true
+text = "1"
+
+[node name="ID_2" type="Button" parent="AddMinis_Popup/AddMinis_Body/AddMinis_ID_TopRow"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+toggle_mode = true
+text = "2"
+
+[node name="ID_3" type="Button" parent="AddMinis_Popup/AddMinis_Body/AddMinis_ID_TopRow"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+toggle_mode = true
+text = "3"
+
+[node name="ID_4" type="Button" parent="AddMinis_Popup/AddMinis_Body/AddMinis_ID_TopRow"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+toggle_mode = true
+text = "4"
+
+[node name="ID_5" type="Button" parent="AddMinis_Popup/AddMinis_Body/AddMinis_ID_TopRow"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+toggle_mode = true
+text = "5"
+
+[node name="AddMinis_ID_BottomRow" type="HBoxContainer" parent="AddMinis_Popup/AddMinis_Body"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ID_6" type="Button" parent="AddMinis_Popup/AddMinis_Body/AddMinis_ID_BottomRow"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+toggle_mode = true
+text = "6"
+
+[node name="ID_7" type="Button" parent="AddMinis_Popup/AddMinis_Body/AddMinis_ID_BottomRow"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+toggle_mode = true
+text = "7"
+
+[node name="ID_8" type="Button" parent="AddMinis_Popup/AddMinis_Body/AddMinis_ID_BottomRow"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+toggle_mode = true
+text = "8"
+
+[node name="ID_9" type="Button" parent="AddMinis_Popup/AddMinis_Body/AddMinis_ID_BottomRow"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+toggle_mode = true
+text = "9"
+
+[node name="ID_10" type="Button" parent="AddMinis_Popup/AddMinis_Body/AddMinis_ID_BottomRow"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+toggle_mode = true
+text = "10"
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="pressed" from="Card_Body/Stat_Block_Control/Stat_Block_Columns/Elite_Background/Stat_Block_Elite/Top_Elite/Add_Elite" to="." method="_on_add_elite_pressed"]
+[connection signal="pressed" from="Card_Body/Stat_Block_Control/Stat_Block_Columns/Normal_Background/Stat_Block_Normal/Top_Normal/Add_Normal" to="." method="_on_add_normal_pressed"]
+[connection signal="pressed" from="Card_Body/Stat_Block_Control/Stat_Block_Columns/Minion_Background/Stat_Block_Minion/Top_Minion/Add_Minion" to="." method="_on_add_minion_pressed"]
+[connection signal="toggled" from="AddMinis_Popup/AddMinis_Body/AddMinis_TypeBox/Elite_Button" to="." method="_on_elite_button_toggled"]
+[connection signal="toggled" from="AddMinis_Popup/AddMinis_Body/AddMinis_TypeBox/Normal_Button" to="." method="_on_normal_button_toggled"]
+[connection signal="toggled" from="AddMinis_Popup/AddMinis_Body/AddMinis_TypeBox/Minion_Button" to="." method="_on_minion_button_toggled"]
+[connection signal="toggled" from="AddMinis_Popup/AddMinis_Body/AddMinis_ID_TopRow/ID_1" to="." method="_on_id_1_toggled"]
+[connection signal="toggled" from="AddMinis_Popup/AddMinis_Body/AddMinis_ID_TopRow/ID_2" to="." method="_on_id_2_toggled"]
+[connection signal="toggled" from="AddMinis_Popup/AddMinis_Body/AddMinis_ID_TopRow/ID_3" to="." method="_on_id_3_toggled"]
+[connection signal="toggled" from="AddMinis_Popup/AddMinis_Body/AddMinis_ID_TopRow/ID_4" to="." method="_on_id_4_toggled"]
+[connection signal="toggled" from="AddMinis_Popup/AddMinis_Body/AddMinis_ID_TopRow/ID_5" to="." method="_on_id_5_toggled"]
+[connection signal="toggled" from="AddMinis_Popup/AddMinis_Body/AddMinis_ID_BottomRow/ID_6" to="." method="_on_id_6_toggled"]
+[connection signal="toggled" from="AddMinis_Popup/AddMinis_Body/AddMinis_ID_BottomRow/ID_7" to="." method="_on_id_7_toggled"]
+[connection signal="toggled" from="AddMinis_Popup/AddMinis_Body/AddMinis_ID_BottomRow/ID_8" to="." method="_on_id_8_toggled"]
+[connection signal="toggled" from="AddMinis_Popup/AddMinis_Body/AddMinis_ID_BottomRow/ID_9" to="." method="_on_id_9_toggled"]
+[connection signal="toggled" from="AddMinis_Popup/AddMinis_Body/AddMinis_ID_BottomRow/ID_10" to="." method="_on_id_10_toggled"]

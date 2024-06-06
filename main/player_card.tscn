@@ -1,0 +1,1551 @@
+[gd_scene load_steps=42 format=3 uid="uid://dk2w27d0leri"]
+
+[ext_resource type="Script" path="res://main/player_card.gd" id="1_8bs6m"]
+[ext_resource type="Texture2D" uid="uid://dj1imqo24saq1" path="res://resources/interface/player_character_ui/increase_speed.png" id="2_bcx37"]
+[ext_resource type="Texture2D" uid="uid://duu70i44yvgfr" path="res://resources/interface/player_character_ui/increase_speed_hover.png" id="3_bq764"]
+[ext_resource type="Texture2D" uid="uid://dp22oeqhjl2ic" path="res://resources/interface/player_character_ui/class_avatar_placeholder.png" id="4_syika"]
+[ext_resource type="Texture2D" uid="uid://bp4s5wy8ow6it" path="res://resources/interface/player_character_ui/reduce_speed.png" id="4_xmm30"]
+[ext_resource type="Texture2D" uid="uid://ct18kg86nmgsv" path="res://resources/interface/player_character_ui/reduce_speed_hover.png" id="5_q7uuc"]
+[ext_resource type="Texture2D" uid="uid://ds8007mmsotct" path="res://resources/interface/player_character_ui/class_icon_placeholder.png" id="7_wun5w"]
+[ext_resource type="Texture2D" uid="uid://b23wydfh0h5at" path="res://resources/interface/player_character_ui/button_close.png" id="8_70ghj"]
+[ext_resource type="Texture2D" uid="uid://tlc7rld4iwyi" path="res://resources/interface/buttons/sub_point.png" id="8_pi4go"]
+[ext_resource type="Texture2D" uid="uid://berokehpsxilp" path="res://resources/interface/player_character_ui/progress_bar_blank.png" id="8_yots1"]
+[ext_resource type="Texture2D" uid="uid://dafl7ivb0d32i" path="res://resources/interface/player_character_ui/button_close_hover.png" id="9_bmnkx"]
+[ext_resource type="Texture2D" uid="uid://bula3yj434brr" path="res://resources/interface/buttons/sub_point_hover.png" id="9_sm2ao"]
+[ext_resource type="Texture2D" uid="uid://ct1heiiyea7wv" path="res://resources/interface/buttons/add_point.png" id="10_igsuc"]
+[ext_resource type="Texture2D" uid="uid://bl75m7o3oitp4" path="res://resources/interface/buttons/add_point_hover.png" id="11_ca6na"]
+[ext_resource type="Texture2D" uid="uid://ceiwrjq7tcxpa" path="res://resources/interface/icons/stats/experience_icon.png" id="12_juf4l"]
+[ext_resource type="Texture2D" uid="uid://ctxbvk6tqaglj" path="res://resources/interface/icons/stats/credits_icon.png" id="13_ajnaf"]
+[ext_resource type="Texture2D" uid="uid://boarufnhvfiuk" path="res://resources/interface/player_character_ui/add_remove_conditions.png" id="13_lh3ci"]
+[ext_resource type="Texture2D" uid="uid://cyv18h87t5owh" path="res://resources/interface/icons/conditions/RGN_icon.png" id="15_k4u8r"]
+[ext_resource type="Texture2D" uid="uid://dsgn1ft4kwq0j" path="res://resources/interface/icons/conditions/RVT_icon.png" id="16_4ery0"]
+[ext_resource type="Texture2D" uid="uid://beslmuaqox4i7" path="res://resources/interface/player_character_ui/add_remove_conditions_hover.png" id="16_gxiiu"]
+[ext_resource type="Texture2D" uid="uid://b10k28rbigsgb" path="res://resources/interface/icons/conditions/PWR_icon.png" id="17_u4dj1"]
+[ext_resource type="Texture2D" uid="uid://b88hsq0phfr7u" path="res://resources/interface/icons/conditions/SHCK_icon.png" id="18_wp60e"]
+[ext_resource type="Texture2D" uid="uid://6rr531djbfsp" path="res://resources/interface/icons/conditions/SHRD_icon.png" id="19_0kp0t"]
+[ext_resource type="Texture2D" uid="uid://bkv3lng8utey4" path="res://resources/interface/icons/conditions/FCS_icon.png" id="20_h885j"]
+[ext_resource type="Texture2D" uid="uid://rqqi801vdpj4" path="res://resources/interface/icons/conditions/HST_icon.png" id="21_ych7c"]
+[ext_resource type="Texture2D" uid="uid://hgllkg13ndth" path="res://resources/interface/icons/conditions/INV_icon.png" id="22_krg4m"]
+[ext_resource type="Texture2D" uid="uid://djffmvfw8ehsj" path="res://resources/interface/icons/conditions/LCK_icon.png" id="23_ipe1n"]
+[ext_resource type="Texture2D" uid="uid://58jiiwhma4ut" path="res://resources/interface/icons/conditions/DOOM_icon.png" id="24_xhj51"]
+[ext_resource type="Texture2D" uid="uid://bqke0s2m5aqha" path="res://resources/interface/icons/conditions/STN_icon.png" id="25_0yi5q"]
+[ext_resource type="Texture2D" uid="uid://dlw30vc85kfrh" path="res://resources/interface/icons/conditions/PRSS_icon.png" id="26_yh7pl"]
+[ext_resource type="Texture2D" uid="uid://n658p8knqpxd" path="res://resources/interface/icons/conditions/DSRM_icon.png" id="27_nrw07"]
+[ext_resource type="Texture2D" uid="uid://jii4olndseog" path="res://resources/interface/icons/conditions/IMMB_icon.png" id="28_ciek5"]
+[ext_resource type="Texture2D" uid="uid://1xany2qnrqj6" path="res://resources/interface/icons/conditions/WKN_icon.png" id="29_wkbou"]
+[ext_resource type="Texture2D" uid="uid://dlgqs74mk34i5" path="res://resources/interface/icons/conditions/SLW_icon.png" id="30_cwsnt"]
+[ext_resource type="Texture2D" uid="uid://cx83casr14iqk" path="res://resources/interface/icons/conditions/JNX_icon.png" id="31_014fs"]
+[ext_resource type="Texture2D" uid="uid://b5gsioqebv7i1" path="res://resources/interface/icons/conditions/SCK_icon.png" id="32_3bbhm"]
+[ext_resource type="Texture2D" uid="uid://4sfmtkme0ty8" path="res://resources/interface/icons/conditions/WND_icon.png" id="33_gud84"]
+[ext_resource type="Texture2D" uid="uid://cirkwd5ab70m5" path="res://resources/interface/icons/conditions/DST_icon.png" id="34_cy5uj"]
+[ext_resource type="Texture2D" uid="uid://23o2puuil70t" path="res://resources/interface/icons/conditions/remove_overlay_icon.png" id="35_d8hv3"]
+[ext_resource type="Texture2D" uid="uid://dyqrj7kj5ye6p" path="res://resources/interface/minis_ui/add_stack_button.png" id="40_4fmx8"]
+[ext_resource type="Texture2D" uid="uid://dm88c8qasxlo4" path="res://resources/interface/minis_ui/sub_stack_button.png" id="41_7lue0"]
+
+[node name="Player_Card" type="Control" groups=["Persist", "Round", "Turn"]]
+custom_minimum_size = Vector2(740, 220)
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_8bs6m")
+
+[node name="Body" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(740, 220)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sections" type="HBoxContainer" parent="Body"]
+layout_mode = 2
+
+[node name="Speed" type="VBoxContainer" parent="Body/Sections"]
+layout_mode = 2
+
+[node name="Increase" type="TextureButton" parent="Body/Sections/Speed"]
+custom_minimum_size = Vector2(70, 25)
+layout_mode = 2
+texture_normal = ExtResource("2_bcx37")
+texture_pressed = ExtResource("2_bcx37")
+texture_hover = ExtResource("3_bq764")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Speed_Label" type="Label" parent="Body/Sections/Speed"]
+custom_minimum_size = Vector2(70, 90)
+layout_mode = 2
+theme_override_font_sizes/font_size = 62
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Edit_Speed_Label" type="Button" parent="Body/Sections/Speed/Speed_Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+icon_alignment = 1
+
+[node name="Decrease" type="TextureButton" parent="Body/Sections/Speed"]
+custom_minimum_size = Vector2(70, 25)
+layout_mode = 2
+texture_normal = ExtResource("4_xmm30")
+texture_pressed = ExtResource("4_xmm30")
+texture_hover = ExtResource("5_q7uuc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Summon" type="Button" parent="Body/Sections/Speed"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Summon"
+clip_text = true
+
+[node name="Avatar" type="TextureRect" parent="Body/Sections"]
+custom_minimum_size = Vector2(220, 220)
+layout_mode = 2
+texture = ExtResource("4_syika")
+expand_mode = 1
+
+[node name="Main" type="VBoxContainer" parent="Body/Sections"]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 2
+
+[node name="Top" type="HBoxContainer" parent="Body/Sections/Main"]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+
+[node name="Class_Icon" type="TextureRect" parent="Body/Sections/Main/Top"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("7_wun5w")
+expand_mode = 1
+
+[node name="Character_Name" type="Label" parent="Body/Sections/Main/Top"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 26
+text = "Player Character Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Remove" type="TextureButton" parent="Body/Sections/Main/Top"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture_normal = ExtResource("8_70ghj")
+texture_pressed = ExtResource("8_70ghj")
+texture_hover = ExtResource("9_bmnkx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Stats" type="HBoxContainer" parent="Body/Sections/Main"]
+custom_minimum_size = Vector2(440, 85)
+layout_mode = 2
+
+[node name="Character" type="VBoxContainer" parent="Body/Sections/Main/Stats"]
+layout_mode = 2
+
+[node name="AP_Line" type="HBoxContainer" parent="Body/Sections/Main/Stats/Character"]
+custom_minimum_size = Vector2(205, 25)
+layout_mode = 2
+
+[node name="AP_Bar" type="TextureProgressBar" parent="Body/Sections/Main/Stats/Character/AP_Line"]
+custom_minimum_size = Vector2(220, 25)
+layout_mode = 2
+max_value = 999.0
+value = 499.0
+texture_under = ExtResource("8_yots1")
+texture_progress = ExtResource("8_yots1")
+tint_under = Color(0.415686, 0, 0, 1)
+tint_progress = Color(0.282353, 0.282353, 0.282353, 1)
+
+[node name="Sub_AP" type="TextureButton" parent="Body/Sections/Main/Stats/Character/AP_Line/AP_Bar"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 10.0
+grow_vertical = 2
+texture_normal = ExtResource("8_pi4go")
+texture_pressed = ExtResource("8_pi4go")
+texture_hover = ExtResource("9_sm2ao")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AP_Label" type="Label" parent="Body/Sections/Main/Stats/Character/AP_Line/AP_Bar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 18
+text = "00 / 00"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Add_AP" type="TextureButton" parent="Body/Sections/Main/Stats/Character/AP_Line/AP_Bar"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("10_igsuc")
+texture_pressed = ExtResource("10_igsuc")
+texture_hover = ExtResource("11_ca6na")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AP_Delta" type="Label" parent="Body/Sections/Main/Stats/Character/AP_Line"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "+00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SP_Line" type="HBoxContainer" parent="Body/Sections/Main/Stats/Character"]
+custom_minimum_size = Vector2(205, 25)
+layout_mode = 2
+
+[node name="SP_Bar" type="TextureProgressBar" parent="Body/Sections/Main/Stats/Character/SP_Line"]
+custom_minimum_size = Vector2(220, 25)
+layout_mode = 2
+max_value = 999.0
+value = 499.0
+texture_under = ExtResource("8_yots1")
+texture_progress = ExtResource("8_yots1")
+tint_under = Color(0.415686, 0, 0, 1)
+tint_progress = Color(0, 1, 1, 1)
+
+[node name="Sub_SP" type="TextureButton" parent="Body/Sections/Main/Stats/Character/SP_Line/SP_Bar"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 10.0
+grow_vertical = 2
+texture_normal = ExtResource("8_pi4go")
+texture_pressed = ExtResource("8_pi4go")
+texture_hover = ExtResource("9_sm2ao")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SP_Label" type="Label" parent="Body/Sections/Main/Stats/Character/SP_Line/SP_Bar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.996788)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 18
+text = "00 / 00"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Add_SP" type="TextureButton" parent="Body/Sections/Main/Stats/Character/SP_Line/SP_Bar"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.977139, 0.985339)
+texture_normal = ExtResource("10_igsuc")
+texture_pressed = ExtResource("10_igsuc")
+texture_hover = ExtResource("11_ca6na")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SP_Delta" type="Label" parent="Body/Sections/Main/Stats/Character/SP_Line"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "+00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HP_Line" type="HBoxContainer" parent="Body/Sections/Main/Stats/Character"]
+custom_minimum_size = Vector2(260, 25)
+layout_mode = 2
+
+[node name="HP_Bar" type="TextureProgressBar" parent="Body/Sections/Main/Stats/Character/HP_Line"]
+custom_minimum_size = Vector2(220, 25)
+layout_mode = 2
+max_value = 999.0
+value = 499.0
+texture_under = ExtResource("8_yots1")
+texture_progress = ExtResource("8_yots1")
+tint_under = Color(0.415686, 0, 0, 1)
+tint_progress = Color(0, 1, 0, 1)
+
+[node name="Sub_HP" type="TextureButton" parent="Body/Sections/Main/Stats/Character/HP_Line/HP_Bar"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 10.0
+grow_vertical = 2
+texture_normal = ExtResource("8_pi4go")
+texture_pressed = ExtResource("8_pi4go")
+texture_hover = ExtResource("9_sm2ao")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HP_Label" type="Label" parent="Body/Sections/Main/Stats/Character/HP_Line/HP_Bar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.00472)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 18
+text = "00 / 00"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Add_HP" type="TextureButton" parent="Body/Sections/Main/Stats/Character/HP_Line/HP_Bar"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("10_igsuc")
+texture_pressed = ExtResource("10_igsuc")
+texture_hover = ExtResource("11_ca6na")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HP_Delta" type="Label" parent="Body/Sections/Main/Stats/Character/HP_Line"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "+00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options" type="VBoxContainer" parent="Body/Sections/Main/Stats"]
+layout_mode = 2
+
+[node name="Exp" type="HBoxContainer" parent="Body/Sections/Main/Stats/Options"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Exp_Button" type="TextureButton" parent="Body/Sections/Main/Stats/Options/Exp"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture_normal = ExtResource("12_juf4l")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Exp_Value" type="Label" parent="Body/Sections/Main/Stats/Options/Exp"]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "00000000"
+horizontal_alignment = 2
+vertical_alignment = 1
+justification_flags = 0
+clip_text = true
+max_lines_visible = 1
+visible_characters = 8
+
+[node name="Credits" type="HBoxContainer" parent="Body/Sections/Main/Stats/Options"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Credits_Button" type="TextureButton" parent="Body/Sections/Main/Stats/Options/Credits"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture_normal = ExtResource("13_ajnaf")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Credits_Value" type="Label" parent="Body/Sections/Main/Stats/Options/Credits"]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "99999999"
+horizontal_alignment = 2
+vertical_alignment = 1
+justification_flags = 0
+clip_text = true
+max_lines_visible = 1
+visible_characters = 8
+
+[node name="Conditions" type="GridContainer" parent="Body/Sections/Main"]
+custom_minimum_size = Vector2(440, 74)
+layout_mode = 2
+columns = 11
+
+[node name="Modify" type="TextureButton" parent="Body/Sections/Main/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture_normal = ExtResource("13_lh3ci")
+texture_pressed = ExtResource("13_lh3ci")
+texture_hover = ExtResource("16_gxiiu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RGN" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("15_k4u8r")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Body/Sections/Main/Conditions/RGN"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 23
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="RVT" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("16_4ery0")
+expand_mode = 1
+
+[node name="PWR" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("17_u4dj1")
+expand_mode = 1
+
+[node name="SHCK" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("18_wp60e")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Body/Sections/Main/Conditions/SHCK"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 23
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="SHRD" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("19_0kp0t")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Body/Sections/Main/Conditions/SHRD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 23
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="FCS" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("20_h885j")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Body/Sections/Main/Conditions/FCS"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 23
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="HST" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("21_ych7c")
+expand_mode = 1
+
+[node name="INV" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("22_krg4m")
+expand_mode = 1
+
+[node name="LCK" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("23_ipe1n")
+expand_mode = 1
+
+[node name="DOOM" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("24_xhj51")
+expand_mode = 1
+
+[node name="STN" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("25_0yi5q")
+expand_mode = 1
+
+[node name="PRSS" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("26_yh7pl")
+expand_mode = 1
+
+[node name="DSRM" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("27_nrw07")
+expand_mode = 1
+
+[node name="IMMB" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("28_ciek5")
+expand_mode = 1
+
+[node name="WKN" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("29_wkbou")
+expand_mode = 1
+
+[node name="SLW" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("30_cwsnt")
+expand_mode = 1
+
+[node name="JNX" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("31_014fs")
+expand_mode = 1
+
+[node name="SCK" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("32_3bbhm")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Body/Sections/Main/Conditions/SCK"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 23
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="WND" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("33_gud84")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Body/Sections/Main/Conditions/WND"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 23
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="DST" type="TextureRect" parent="Body/Sections/Main/Conditions"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("34_cy5uj")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Body/Sections/Main/Conditions/DST"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 23
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Speed" type="PopupPanel" parent="."]
+title = "Player Speed"
+position = Vector2i(0, 240)
+size = Vector2i(166, 393)
+
+[node name="Rows" type="VBoxContainer" parent="Speed"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 162.0
+offset_bottom = 389.0
+
+[node name="Title" type="Label" parent="Speed/Rows"]
+layout_mode = 2
+text = "Player Speed Total"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Speed_Label" type="Label" parent="Speed/Rows"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 65
+text = "XX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card_Label" type="Label" parent="Speed/Rows"]
+layout_mode = 2
+text = "Card 1    Card 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sub_Speed" type="HBoxContainer" parent="Speed/Rows"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Speed_1" type="Label" parent="Speed/Rows/Sub_Speed"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "XX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Separator" type="Label" parent="Speed/Rows/Sub_Speed"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Speed_2" type="Label" parent="Speed/Rows/Sub_Speed"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "XX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Num_Pad" type="GridContainer" parent="Speed/Rows"]
+layout_mode = 2
+columns = 3
+
+[node name="Num_7" type="Button" parent="Speed/Rows/Num_Pad"]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "7"
+
+[node name="Num_8" type="Button" parent="Speed/Rows/Num_Pad"]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "8"
+
+[node name="Num_9" type="Button" parent="Speed/Rows/Num_Pad"]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "9"
+
+[node name="Num_4" type="Button" parent="Speed/Rows/Num_Pad"]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "4"
+
+[node name="Num_5" type="Button" parent="Speed/Rows/Num_Pad"]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "5"
+
+[node name="Num_6" type="Button" parent="Speed/Rows/Num_Pad"]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "6"
+
+[node name="Num_1" type="Button" parent="Speed/Rows/Num_Pad"]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "1"
+
+[node name="Num_2" type="Button" parent="Speed/Rows/Num_Pad"]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "2"
+
+[node name="Num_3" type="Button" parent="Speed/Rows/Num_Pad"]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "3"
+
+[node name="Exhausted" type="Button" parent="Speed/Rows/Num_Pad"]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "Z"
+
+[node name="Num_0" type="Button" parent="Speed/Rows/Num_Pad"]
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "0"
+
+[node name="Conditions" type="PopupPanel" parent="."]
+position = Vector2i(240, 240)
+size = Vector2i(277, 199)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Conditions"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 273.0
+offset_bottom = 195.0
+
+[node name="Conditions" type="GridContainer" parent="Conditions/HBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="RVT_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("16_4ery0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Conditions/RVT_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="PWR_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("17_u4dj1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Conditions/PWR_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="LCK_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("23_ipe1n")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Conditions/LCK_Toggle"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="INV_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("22_krg4m")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Conditions/INV_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="HST_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("21_ych7c")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Conditions/HST_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="DOOM_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("24_xhj51")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Conditions/DOOM_Toggle"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="STN_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("25_0yi5q")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Conditions/STN_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="PRSS_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("26_yh7pl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Conditions/PRSS_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="DSRM_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("27_nrw07")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Conditions/DSRM_Toggle"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="IMMB_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("28_ciek5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Conditions/IMMB_Toggle"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="JNX_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("31_014fs")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Conditions/JNX_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="WKN_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("29_wkbou")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Conditions/WKN_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="SLW_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("30_cwsnt")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Conditions/SLW_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="Stacking_Conditions" type="VBoxContainer" parent="Conditions/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="GridContainer" parent="Conditions/HBoxContainer/Stacking_Conditions"]
+layout_mode = 2
+columns = 2
+
+[node name="RGN" type="HBoxContainer" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer"]
+layout_mode = 2
+
+[node name="RGN_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/RGN"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("15_k4u8r")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/RGN/RGN_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/RGN/RGN_Toggle"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+offset_right = 35.0
+offset_bottom = 35.0
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Modify" type="VBoxContainer" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/RGN"]
+layout_mode = 2
+
+[node name="RGN_Add" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/RGN/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("40_4fmx8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RGN_Sub" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/RGN/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("41_7lue0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SHCK" type="HBoxContainer" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer"]
+layout_mode = 2
+
+[node name="SHCK_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SHCK"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("18_wp60e")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SHCK/SHCK_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SHCK/SHCK_Toggle"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Modify" type="VBoxContainer" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SHCK"]
+layout_mode = 2
+
+[node name="SHCK_Add" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SHCK/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("40_4fmx8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SHCK_Sub" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SHCK/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("41_7lue0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SHRD" type="HBoxContainer" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer"]
+layout_mode = 2
+
+[node name="SHRD_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SHRD"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("19_0kp0t")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SHRD/SHRD_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SHRD/SHRD_Toggle"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Modify" type="VBoxContainer" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SHRD"]
+layout_mode = 2
+
+[node name="SHRD_Add" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SHRD/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("40_4fmx8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SHRD_Sub" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SHRD/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("41_7lue0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="FCS" type="HBoxContainer" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer"]
+layout_mode = 2
+
+[node name="FCS_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/FCS"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("20_h885j")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/FCS/FCS_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/FCS/FCS_Toggle"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Modify" type="VBoxContainer" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/FCS"]
+layout_mode = 2
+
+[node name="FCS_Add" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/FCS/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("40_4fmx8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="FCS_Sub" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/FCS/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("41_7lue0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SCK" type="HBoxContainer" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer"]
+layout_mode = 2
+
+[node name="SCK_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SCK"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("32_3bbhm")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SCK/SCK_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SCK/SCK_Toggle"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Modify" type="VBoxContainer" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SCK"]
+layout_mode = 2
+
+[node name="SCK_Add" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SCK/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("40_4fmx8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SCK_Sub" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SCK/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("41_7lue0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="WND" type="HBoxContainer" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer"]
+layout_mode = 2
+
+[node name="WND_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/WND"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("33_gud84")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/WND/WND_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/WND/WND_Toggle"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Modify" type="VBoxContainer" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/WND"]
+layout_mode = 2
+
+[node name="WND_Add" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/WND/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("40_4fmx8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="WND_Sub" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/WND/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("41_7lue0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="DST" type="HBoxContainer" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer"]
+layout_mode = 2
+
+[node name="DST_Toggle" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/DST"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("34_cy5uj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/DST/DST_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("35_d8hv3")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/DST/DST_Toggle"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Modify" type="VBoxContainer" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/DST"]
+layout_mode = 2
+
+[node name="DST_Add" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/DST/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("40_4fmx8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="DST_Sub" type="TextureButton" parent="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/DST/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("41_7lue0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Summons" type="PopupPanel" parent="."]
+
+[connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
+[connection signal="focus_exited" from="." to="." method="_on_focus_exited"]
+[connection signal="pressed" from="Body/Sections/Speed/Increase" to="." method="_on_increase_pressed"]
+[connection signal="pressed" from="Body/Sections/Speed/Speed_Label/Edit_Speed_Label" to="." method="_on_edit_speed_label_pressed"]
+[connection signal="pressed" from="Body/Sections/Speed/Decrease" to="." method="_on_decrease_pressed"]
+[connection signal="pressed" from="Body/Sections/Main/Stats/Character/AP_Line/AP_Bar/Sub_AP" to="." method="_on_sub_ap_pressed"]
+[connection signal="pressed" from="Body/Sections/Main/Stats/Character/AP_Line/AP_Bar/Add_AP" to="." method="_on_add_ap_pressed"]
+[connection signal="pressed" from="Body/Sections/Main/Stats/Character/SP_Line/SP_Bar/Sub_SP" to="." method="_on_sub_sp_pressed"]
+[connection signal="pressed" from="Body/Sections/Main/Stats/Character/SP_Line/SP_Bar/Add_SP" to="." method="_on_add_sp_pressed"]
+[connection signal="pressed" from="Body/Sections/Main/Stats/Character/HP_Line/HP_Bar/Sub_HP" to="." method="_on_sub_hp_pressed"]
+[connection signal="pressed" from="Body/Sections/Main/Stats/Character/HP_Line/HP_Bar/Add_HP" to="." method="_on_add_hp_pressed"]
+[connection signal="pressed" from="Body/Sections/Main/Conditions/Modify" to="." method="_on_modify_pressed"]
+[connection signal="pressed" from="Speed/Rows/Num_Pad/Num_7" to="." method="_on_num_7_pressed"]
+[connection signal="pressed" from="Speed/Rows/Num_Pad/Num_8" to="." method="_on_num_8_pressed"]
+[connection signal="pressed" from="Speed/Rows/Num_Pad/Num_9" to="." method="_on_num_9_pressed"]
+[connection signal="pressed" from="Speed/Rows/Num_Pad/Num_4" to="." method="_on_num_4_pressed"]
+[connection signal="pressed" from="Speed/Rows/Num_Pad/Num_5" to="." method="_on_num_5_pressed"]
+[connection signal="pressed" from="Speed/Rows/Num_Pad/Num_6" to="." method="_on_num_6_pressed"]
+[connection signal="pressed" from="Speed/Rows/Num_Pad/Num_1" to="." method="_on_num_1_pressed"]
+[connection signal="pressed" from="Speed/Rows/Num_Pad/Num_2" to="." method="_on_num_2_pressed"]
+[connection signal="pressed" from="Speed/Rows/Num_Pad/Num_3" to="." method="_on_num_3_pressed"]
+[connection signal="pressed" from="Speed/Rows/Num_Pad/Num_0" to="." method="_on_num_0_pressed"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Conditions/RVT_Toggle" to="." method="_on_rvt_toggle_toggled"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Conditions/PWR_Toggle" to="." method="_on_pwr_toggle_toggled"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Conditions/LCK_Toggle" to="." method="_on_lck_toggle_toggled"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Conditions/INV_Toggle" to="." method="_on_inv_toggle_toggled"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Conditions/HST_Toggle" to="." method="_on_hst_toggle_toggled"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Conditions/DOOM_Toggle" to="." method="_on_doom_toggle_toggled"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Conditions/STN_Toggle" to="." method="_on_stn_toggle_toggled"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Conditions/PRSS_Toggle" to="." method="_on_prss_toggle_toggled"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Conditions/DSRM_Toggle" to="." method="_on_dsrm_toggle_toggled"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Conditions/IMMB_Toggle" to="." method="_on_immb_toggle_toggled"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Conditions/JNX_Toggle" to="." method="_on_jnx_toggle_toggled"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Conditions/WKN_Toggle" to="." method="_on_wkn_toggle_toggled"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Conditions/SLW_Toggle" to="." method="_on_slw_toggle_toggled"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/RGN/RGN_Toggle" to="." method="_on_rgn_toggle_toggled"]
+[connection signal="pressed" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/RGN/Modify/RGN_Add" to="." method="_on_rgn_add_pressed"]
+[connection signal="pressed" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/RGN/Modify/RGN_Sub" to="." method="_on_rgn_sub_pressed"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SHCK/SHCK_Toggle" to="." method="_on_shck_toggle_toggled"]
+[connection signal="pressed" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SHCK/Modify/SHCK_Add" to="." method="_on_shck_add_pressed"]
+[connection signal="pressed" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SHCK/Modify/SHCK_Sub" to="." method="_on_shck_sub_pressed"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SHRD/SHRD_Toggle" to="." method="_on_shrd_toggle_toggled"]
+[connection signal="pressed" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SHRD/Modify/SHRD_Add" to="." method="_on_shrd_add_pressed"]
+[connection signal="pressed" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SHRD/Modify/SHRD_Sub" to="." method="_on_shrd_sub_pressed"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/FCS/FCS_Toggle" to="." method="_on_fcs_toggle_toggled"]
+[connection signal="pressed" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/FCS/Modify/FCS_Add" to="." method="_on_fcs_add_pressed"]
+[connection signal="pressed" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/FCS/Modify/FCS_Sub" to="." method="_on_fcs_sub_pressed"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SCK/SCK_Toggle" to="." method="_on_sck_toggle_toggled"]
+[connection signal="pressed" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SCK/Modify/SCK_Add" to="." method="_on_sck_add_pressed"]
+[connection signal="pressed" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/SCK/Modify/SCK_Sub" to="." method="_on_sck_sub_pressed"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/WND/WND_Toggle" to="." method="_on_wnd_toggle_toggled"]
+[connection signal="pressed" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/WND/Modify/WND_Add" to="." method="_on_wnd_add_pressed"]
+[connection signal="pressed" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/WND/Modify/WND_Sub" to="." method="_on_wnd_sub_pressed"]
+[connection signal="toggled" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/DST/DST_Toggle" to="." method="_on_dst_toggle_toggled"]
+[connection signal="pressed" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/DST/Modify/DST_Add" to="." method="_on_dst_add_pressed"]
+[connection signal="pressed" from="Conditions/HBoxContainer/Stacking_Conditions/HBoxContainer/DST/Modify/DST_Sub" to="." method="_on_dst_sub_pressed"]

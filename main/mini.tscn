@@ -1,0 +1,1367 @@
+[gd_scene load_steps=36 format=3 uid="uid://blar0y1yov46y"]
+
+[ext_resource type="Script" path="res://main/mini.gd" id="1_27q2y"]
+[ext_resource type="Texture2D" uid="uid://bdydyp31e2e7y" path="res://resources/interface/minis_ui/mini_progress_bar_background.png" id="2_3ic2e"]
+[ext_resource type="Texture2D" uid="uid://dyrl4nvg6j427" path="res://resources/interface/minis_ui/mini_progress_bar_ap.png" id="3_lwsyg"]
+[ext_resource type="Texture2D" uid="uid://c5goow51w3bhc" path="res://resources/interface/minis_ui/mini_progress_bar_sp.png" id="4_nuvfe"]
+[ext_resource type="Texture2D" uid="uid://c1keuu3irxl44" path="res://resources/interface/minis_ui/mini_progress_bar_hp.png" id="5_63qts"]
+[ext_resource type="Texture2D" uid="uid://cyv18h87t5owh" path="res://resources/interface/icons/conditions/RGN_icon.png" id="6_1lq55"]
+[ext_resource type="Texture2D" uid="uid://dsgn1ft4kwq0j" path="res://resources/interface/icons/conditions/RVT_icon.png" id="7_laqhw"]
+[ext_resource type="Texture2D" uid="uid://b10k28rbigsgb" path="res://resources/interface/icons/conditions/PWR_icon.png" id="8_gh3ql"]
+[ext_resource type="Texture2D" uid="uid://bkv3lng8utey4" path="res://resources/interface/icons/conditions/FCS_icon.png" id="9_rowfx"]
+[ext_resource type="Texture2D" uid="uid://djffmvfw8ehsj" path="res://resources/interface/icons/conditions/LCK_icon.png" id="10_kn52d"]
+[ext_resource type="Texture2D" uid="uid://rqqi801vdpj4" path="res://resources/interface/icons/conditions/HST_icon.png" id="11_5p1j8"]
+[ext_resource type="Texture2D" uid="uid://hgllkg13ndth" path="res://resources/interface/icons/conditions/INV_icon.png" id="12_02kur"]
+[ext_resource type="Texture2D" uid="uid://b88hsq0phfr7u" path="res://resources/interface/icons/conditions/SHCK_icon.png" id="13_m33fo"]
+[ext_resource type="Texture2D" uid="uid://6rr531djbfsp" path="res://resources/interface/icons/conditions/SHRD_icon.png" id="14_ocmgs"]
+[ext_resource type="Texture2D" uid="uid://58jiiwhma4ut" path="res://resources/interface/icons/conditions/DOOM_icon.png" id="15_lsiar"]
+[ext_resource type="Texture2D" uid="uid://bqke0s2m5aqha" path="res://resources/interface/icons/conditions/STN_icon.png" id="16_e7krg"]
+[ext_resource type="Texture2D" uid="uid://dlw30vc85kfrh" path="res://resources/interface/icons/conditions/PRSS_icon.png" id="17_xbaw8"]
+[ext_resource type="Texture2D" uid="uid://n658p8knqpxd" path="res://resources/interface/icons/conditions/DSRM_icon.png" id="18_6cj78"]
+[ext_resource type="Texture2D" uid="uid://jii4olndseog" path="res://resources/interface/icons/conditions/IMMB_icon.png" id="19_c1n0r"]
+[ext_resource type="Texture2D" uid="uid://1xany2qnrqj6" path="res://resources/interface/icons/conditions/WKN_icon.png" id="20_acoj2"]
+[ext_resource type="Texture2D" uid="uid://dlgqs74mk34i5" path="res://resources/interface/icons/conditions/SLW_icon.png" id="21_cj3xm"]
+[ext_resource type="Texture2D" uid="uid://cx83casr14iqk" path="res://resources/interface/icons/conditions/JNX_icon.png" id="22_7bsgc"]
+[ext_resource type="Texture2D" uid="uid://b5gsioqebv7i1" path="res://resources/interface/icons/conditions/SCK_icon.png" id="23_1vl1w"]
+[ext_resource type="Texture2D" uid="uid://4sfmtkme0ty8" path="res://resources/interface/icons/conditions/WND_icon.png" id="24_m5bd5"]
+[ext_resource type="Texture2D" uid="uid://cirkwd5ab70m5" path="res://resources/interface/icons/conditions/DST_icon.png" id="25_h4bga"]
+[ext_resource type="Texture2D" uid="uid://tlc7rld4iwyi" path="res://resources/interface/buttons/sub_point.png" id="26_xb3cq"]
+[ext_resource type="Texture2D" uid="uid://bula3yj434brr" path="res://resources/interface/buttons/sub_point_hover.png" id="27_f8het"]
+[ext_resource type="Texture2D" uid="uid://ct1heiiyea7wv" path="res://resources/interface/buttons/add_point.png" id="28_ywc6i"]
+[ext_resource type="Texture2D" uid="uid://bl75m7o3oitp4" path="res://resources/interface/buttons/add_point_hover.png" id="29_sdfg2"]
+[ext_resource type="Texture2D" uid="uid://23o2puuil70t" path="res://resources/interface/icons/conditions/remove_overlay_icon.png" id="30_taab6"]
+[ext_resource type="Texture2D" uid="uid://dyqrj7kj5ye6p" path="res://resources/interface/minis_ui/add_stack_button.png" id="31_yl6so"]
+[ext_resource type="Texture2D" uid="uid://dm88c8qasxlo4" path="res://resources/interface/minis_ui/sub_stack_button.png" id="32_ixwyl"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vygqb"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xjriy"]
+
+[sub_resource type="Theme" id="Theme_cmy1m"]
+LineEdit/constants/minimum_character_width = 0
+LineEdit/font_sizes/font_size = 23
+
+[node name="Mini" type="Control" groups=["Persist", "Round", "Turn"]]
+custom_minimum_size = Vector2(140, 60)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 140.0
+offset_bottom = 120.0
+script = ExtResource("1_27q2y")
+
+[node name="Background" type="ColorRect" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(140, 60)
+layout_mode = 1
+offset_right = 140.0
+offset_bottom = 60.0
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Mini_Image" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = SubResource("CompressedTexture2D_vygqb")
+expand_mode = 1
+
+[node name="Mini_Border" type="TextureRect" parent="Background/Mini_Image"]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 0
+offset_top = 40.0
+offset_right = 60.0
+offset_bottom = 60.0
+texture = SubResource("CompressedTexture2D_xjriy")
+expand_mode = 1
+
+[node name="MiniID_Label" type="Label" parent="Background/Mini_Image"]
+custom_minimum_size = Vector2(20, 26)
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -22.0
+offset_right = 20.0
+offset_bottom = 4.0
+grow_vertical = 0
+auto_translate = false
+localize_numeral_system = false
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+text = "10
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AP_Bar" type="TextureProgressBar" parent="Background"]
+layout_mode = 0
+offset_left = 30.0
+offset_right = 140.0
+offset_bottom = 30.0
+scale = Vector2(1, 0.5)
+max_value = 999.0
+value = 499.0
+texture_under = ExtResource("2_3ic2e")
+texture_progress = ExtResource("3_lwsyg")
+
+[node name="AP_Label" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = -7.0
+offset_right = 140.0
+offset_bottom = 22.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 18
+text = "00 / 00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SP_Bar" type="TextureProgressBar" parent="Background"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 15.0
+offset_right = 140.0
+offset_bottom = 45.0
+scale = Vector2(1, 0.5)
+max_value = 999.0
+value = 499.0
+texture_under = ExtResource("2_3ic2e")
+texture_progress = ExtResource("4_nuvfe")
+
+[node name="SP_Label" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 8.0
+offset_right = 140.0
+offset_bottom = 37.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 18
+text = "00 / 00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HP_Bar" type="TextureProgressBar" parent="Background"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 140.0
+offset_bottom = 60.0
+max_value = 999.0
+value = 499.0
+texture_under = ExtResource("2_3ic2e")
+texture_progress = ExtResource("5_63qts")
+
+[node name="HP_Label" type="Label" parent="Background"]
+layout_mode = 1
+offset_left = 30.0
+offset_top = 26.0
+offset_right = 140.0
+offset_bottom = 64.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 25
+text = "00 / 00"
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 0
+offset_top = 60.0
+offset_right = 140.0
+offset_bottom = 60.0
+horizontal_scroll_mode = 0
+
+[node name="Conditions" type="GridContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(140, 60)
+layout_mode = 2
+columns = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="RGN" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("6_1lq55")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="ScrollContainer/Conditions/RGN"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 17
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="RVT" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("7_laqhw")
+expand_mode = 1
+
+[node name="PWR" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("8_gh3ql")
+expand_mode = 1
+
+[node name="FCS" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("9_rowfx")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="ScrollContainer/Conditions/FCS"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 17
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="LCK" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+texture = ExtResource("10_kn52d")
+expand_mode = 1
+
+[node name="HST" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+texture = ExtResource("11_5p1j8")
+expand_mode = 1
+
+[node name="INV" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+texture = ExtResource("12_02kur")
+expand_mode = 1
+
+[node name="SHCK" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+texture = ExtResource("13_m33fo")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="ScrollContainer/Conditions/SHCK"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 17
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="SHRD" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+texture = ExtResource("14_ocmgs")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="ScrollContainer/Conditions/SHRD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 17
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="DOOM" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+texture = ExtResource("15_lsiar")
+expand_mode = 1
+
+[node name="STN" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+texture = ExtResource("16_e7krg")
+expand_mode = 1
+
+[node name="PRSS" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+texture = ExtResource("17_xbaw8")
+expand_mode = 1
+
+[node name="DSRM" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+texture = ExtResource("18_6cj78")
+expand_mode = 1
+
+[node name="IMMB" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+texture = ExtResource("19_c1n0r")
+expand_mode = 1
+
+[node name="WKN" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+texture = ExtResource("20_acoj2")
+expand_mode = 1
+
+[node name="SLW" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+texture = ExtResource("21_cj3xm")
+expand_mode = 1
+
+[node name="JNX" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+texture = ExtResource("22_7bsgc")
+expand_mode = 1
+
+[node name="SCK" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+texture = ExtResource("23_1vl1w")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="ScrollContainer/Conditions/SCK"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 17
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="WND" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+texture = ExtResource("24_m5bd5")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="ScrollContainer/Conditions/WND"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 17
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="DST" type="TextureRect" parent="ScrollContainer/Conditions"]
+visible = false
+custom_minimum_size = Vector2(27, 27)
+layout_mode = 2
+texture = ExtResource("25_h4bga")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="ScrollContainer/Conditions/DST"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 17
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="MiniOpen_Button" type="Button" parent="."]
+z_as_relative = false
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
+button_mask = 3
+flat = true
+
+[node name="Mini_Popup" type="PopupPanel" parent="."]
+position = Vector2i(0, 140)
+size = Vector2i(290, 280)
+wrap_controls = false
+always_on_top = true
+max_size = Vector2i(300, 300)
+
+[node name="Body" type="VBoxContainer" parent="Mini_Popup"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 286.0
+offset_bottom = 376.0
+
+[node name="Top" type="HBoxContainer" parent="Mini_Popup/Body"]
+layout_mode = 2
+
+[node name="Points" type="VBoxContainer" parent="Mini_Popup/Body/Top"]
+layout_mode = 2
+
+[node name="HP_Control" type="Control" parent="Mini_Popup/Body/Top/Points"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HP_Sub" type="TextureButton" parent="Mini_Popup/Body/Top/Points/HP_Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("26_xb3cq")
+texture_pressed = ExtResource("26_xb3cq")
+texture_hover = ExtResource("27_f8het")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HP_Line" type="SpinBox" parent="Mini_Popup/Body/Top/Points/HP_Control"]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 0
+offset_left = 40.0
+offset_right = 120.0
+offset_bottom = 40.0
+theme = SubResource("Theme_cmy1m")
+max_value = 999.0
+alignment = 1
+select_all_on_focus = true
+
+[node name="HP_Add" type="TextureButton" parent="Mini_Popup/Body/Top/Points/HP_Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 120.0
+offset_right = 160.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("28_ywc6i")
+texture_pressed = ExtResource("28_ywc6i")
+texture_hover = ExtResource("29_sdfg2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HP_Delta" type="Label" parent="Mini_Popup/Body/Top/Points/HP_Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 160.0
+offset_right = 200.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+max_lines_visible = 1
+visible_characters = 4
+
+[node name="AP_Control" type="Control" parent="Mini_Popup/Body/Top/Points"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="AP_Sub" type="TextureButton" parent="Mini_Popup/Body/Top/Points/AP_Control"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("26_xb3cq")
+texture_pressed = ExtResource("26_xb3cq")
+texture_hover = ExtResource("27_f8het")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AP_Line" type="SpinBox" parent="Mini_Popup/Body/Top/Points/AP_Control"]
+custom_minimum_size = Vector2(80, 20)
+layout_mode = 0
+offset_left = 40.0
+offset_right = 120.0
+offset_bottom = 40.0
+theme = SubResource("Theme_cmy1m")
+max_value = 999.0
+alignment = 1
+select_all_on_focus = true
+
+[node name="AP_Add" type="TextureButton" parent="Mini_Popup/Body/Top/Points/AP_Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 120.0
+offset_right = 160.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("28_ywc6i")
+texture_pressed = ExtResource("28_ywc6i")
+texture_hover = ExtResource("29_sdfg2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AP_Delta" type="Label" parent="Mini_Popup/Body/Top/Points/AP_Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 160.0
+offset_right = 200.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+max_lines_visible = 1
+visible_characters = 4
+
+[node name="SP_Control" type="Control" parent="Mini_Popup/Body/Top/Points"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="SP_Sub" type="TextureButton" parent="Mini_Popup/Body/Top/Points/SP_Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("26_xb3cq")
+texture_pressed = ExtResource("26_xb3cq")
+texture_hover = ExtResource("27_f8het")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SP_Line" type="SpinBox" parent="Mini_Popup/Body/Top/Points/SP_Control"]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 0
+offset_left = 40.0
+offset_right = 120.0
+offset_bottom = 40.0
+theme = SubResource("Theme_cmy1m")
+max_value = 999.0
+alignment = 1
+select_all_on_focus = true
+
+[node name="SP_Add" type="TextureButton" parent="Mini_Popup/Body/Top/Points/SP_Control"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 120.0
+offset_right = 160.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("28_ywc6i")
+texture_pressed = ExtResource("28_ywc6i")
+texture_hover = ExtResource("29_sdfg2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SP_Delta" type="Label" parent="Mini_Popup/Body/Top/Points/SP_Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 160.0
+offset_right = 200.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+max_lines_visible = 1
+visible_characters = 4
+
+[node name="Conditions" type="GridContainer" parent="Mini_Popup/Body/Top/Points"]
+custom_minimum_size = Vector2(200, 240)
+layout_mode = 2
+columns = 5
+
+[node name="RVT_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Points/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("7_laqhw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Points/Conditions/RVT_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="PWR_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Points/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("8_gh3ql")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Points/Conditions/PWR_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="LCK_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Points/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("10_kn52d")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Points/Conditions/LCK_Toggle"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="HST_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Points/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("11_5p1j8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Points/Conditions/HST_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="INV_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Points/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("12_02kur")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Points/Conditions/INV_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="STN_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Points/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("16_e7krg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Points/Conditions/STN_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="DOOM_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Points/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("15_lsiar")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Points/Conditions/DOOM_Toggle"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="DSRM_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Points/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("18_6cj78")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Points/Conditions/DSRM_Toggle"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="IMMB_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Points/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("19_c1n0r")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Points/Conditions/IMMB_Toggle"]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="JNX_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Points/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("22_7bsgc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Points/Conditions/JNX_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="PRSS_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Points/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("17_xbaw8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Points/Conditions/PRSS_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="WKN_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Points/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("20_acoj2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Points/Conditions/WKN_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="SLW_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Points/Conditions"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("21_cj3xm")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Points/Conditions/SLW_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="Stacking_Conditions" type="VBoxContainer" parent="Mini_Popup/Body/Top"]
+layout_mode = 2
+
+[node name="RGN" type="HBoxContainer" parent="Mini_Popup/Body/Top/Stacking_Conditions"]
+layout_mode = 2
+
+[node name="RGN_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/RGN"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("6_1lq55")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Stacking_Conditions/RGN/RGN_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+offset_right = 35.0
+offset_bottom = 35.0
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Mini_Popup/Body/Top/Stacking_Conditions/RGN/RGN_Toggle"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+offset_right = 35.0
+offset_bottom = 35.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Modify" type="VBoxContainer" parent="Mini_Popup/Body/Top/Stacking_Conditions/RGN"]
+layout_mode = 2
+
+[node name="RGN_Add" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/RGN/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("31_yl6so")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RGN_Sub" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/RGN/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("32_ixwyl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SHCK" type="HBoxContainer" parent="Mini_Popup/Body/Top/Stacking_Conditions"]
+layout_mode = 2
+
+[node name="SHCK_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/SHCK"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("13_m33fo")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Stacking_Conditions/SHCK/SHCK_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Mini_Popup/Body/Top/Stacking_Conditions/SHCK/SHCK_Toggle"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Modify" type="VBoxContainer" parent="Mini_Popup/Body/Top/Stacking_Conditions/SHCK"]
+layout_mode = 2
+
+[node name="SHCK_Add" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/SHCK/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("31_yl6so")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SHCK_Sub" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/SHCK/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("32_ixwyl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SHRD" type="HBoxContainer" parent="Mini_Popup/Body/Top/Stacking_Conditions"]
+layout_mode = 2
+
+[node name="SHRD_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/SHRD"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("14_ocmgs")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Stacking_Conditions/SHRD/SHRD_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Mini_Popup/Body/Top/Stacking_Conditions/SHRD/SHRD_Toggle"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Modify" type="VBoxContainer" parent="Mini_Popup/Body/Top/Stacking_Conditions/SHRD"]
+layout_mode = 2
+
+[node name="SHRD_Add" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/SHRD/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("31_yl6so")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SHRD_Sub" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/SHRD/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("32_ixwyl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="FCS" type="HBoxContainer" parent="Mini_Popup/Body/Top/Stacking_Conditions"]
+layout_mode = 2
+
+[node name="FCS_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/FCS"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("9_rowfx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Stacking_Conditions/FCS/FCS_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Mini_Popup/Body/Top/Stacking_Conditions/FCS/FCS_Toggle"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Modify" type="VBoxContainer" parent="Mini_Popup/Body/Top/Stacking_Conditions/FCS"]
+layout_mode = 2
+
+[node name="FCS_Add" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/FCS/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("31_yl6so")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="FCS_Sub" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/FCS/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("32_ixwyl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SCK" type="HBoxContainer" parent="Mini_Popup/Body/Top/Stacking_Conditions"]
+layout_mode = 2
+
+[node name="SCK_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/SCK"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("23_1vl1w")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Stacking_Conditions/SCK/SCK_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Mini_Popup/Body/Top/Stacking_Conditions/SCK/SCK_Toggle"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Modify" type="VBoxContainer" parent="Mini_Popup/Body/Top/Stacking_Conditions/SCK"]
+layout_mode = 2
+
+[node name="SCK_Add" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/SCK/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("31_yl6so")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SCK_Sub" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/SCK/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("32_ixwyl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="WND" type="HBoxContainer" parent="Mini_Popup/Body/Top/Stacking_Conditions"]
+layout_mode = 2
+
+[node name="WND_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/WND"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("24_m5bd5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Stacking_Conditions/WND/WND_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Mini_Popup/Body/Top/Stacking_Conditions/WND/WND_Toggle"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Modify" type="VBoxContainer" parent="Mini_Popup/Body/Top/Stacking_Conditions/WND"]
+layout_mode = 2
+
+[node name="WND_Add" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/WND/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("31_yl6so")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="WND_Sub" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/WND/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("32_ixwyl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="DST" type="HBoxContainer" parent="Mini_Popup/Body/Top/Stacking_Conditions"]
+layout_mode = 2
+
+[node name="DST_Toggle" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/DST"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+texture_normal = ExtResource("25_h4bga")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Disabled" type="TextureRect" parent="Mini_Popup/Body/Top/Stacking_Conditions/DST/DST_Toggle"]
+visible = false
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("30_taab6")
+expand_mode = 1
+
+[node name="Stack" type="Label" parent="Mini_Popup/Body/Top/Stacking_Conditions/DST/DST_Toggle"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Modify" type="VBoxContainer" parent="Mini_Popup/Body/Top/Stacking_Conditions/DST"]
+layout_mode = 2
+
+[node name="DST_Add" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/DST/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("31_yl6so")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="DST_Sub" type="TextureButton" parent="Mini_Popup/Body/Top/Stacking_Conditions/DST/Modify"]
+custom_minimum_size = Vector2(35, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("32_ixwyl")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="MiniOpen_Button" to="." method="_on_mini_open_button_pressed"]
+[connection signal="popup_hide" from="Mini_Popup" to="." method="_on_mini_popup_popup_hide"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Points/HP_Control/HP_Sub" to="." method="_on_hp_sub_pressed"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Points/HP_Control/HP_Add" to="." method="_on_hp_add_pressed"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Points/AP_Control/AP_Sub" to="." method="_on_ap_sub_pressed"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Points/AP_Control/AP_Add" to="." method="_on_ap_add_pressed"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Points/SP_Control/SP_Sub" to="." method="_on_sp_sub_pressed"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Points/SP_Control/SP_Add" to="." method="_on_sp_add_pressed"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Points/Conditions/RVT_Toggle" to="." method="_on_rvt_toggle_toggled"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Points/Conditions/PWR_Toggle" to="." method="_on_pwr_toggle_toggled"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Points/Conditions/LCK_Toggle" to="." method="_on_lck_toggle_toggled"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Points/Conditions/HST_Toggle" to="." method="_on_hst_toggle_toggled"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Points/Conditions/INV_Toggle" to="." method="_on_inv_toggle_toggled"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Points/Conditions/STN_Toggle" to="." method="_on_stn_toggle_toggled"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Points/Conditions/DOOM_Toggle" to="." method="_on_doom_toggle_toggled"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Points/Conditions/DSRM_Toggle" to="." method="_on_dsrm_toggle_toggled"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Points/Conditions/IMMB_Toggle" to="." method="_on_immb_toggle_toggled"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Points/Conditions/JNX_Toggle" to="." method="_on_jnx_toggle_toggled"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Points/Conditions/PRSS_Toggle" to="." method="_on_prss_toggle_toggled"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Points/Conditions/WKN_Toggle" to="." method="_on_wkn_toggle_toggled"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Points/Conditions/SLW_Toggle" to="." method="_on_slw_toggle_toggled"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Stacking_Conditions/RGN/RGN_Toggle" to="." method="_on_rgn_toggle_toggled"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Stacking_Conditions/RGN/Modify/RGN_Add" to="." method="_on_rgn_add_pressed"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Stacking_Conditions/RGN/Modify/RGN_Sub" to="." method="_on_rgn_sub_pressed"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Stacking_Conditions/SHCK/SHCK_Toggle" to="." method="_on_shck_toggle_toggled"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Stacking_Conditions/SHCK/Modify/SHCK_Add" to="." method="_on_shck_add_pressed"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Stacking_Conditions/SHCK/Modify/SHCK_Sub" to="." method="_on_shck_sub_pressed"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Stacking_Conditions/SHRD/SHRD_Toggle" to="." method="_on_shrd_toggle_toggled"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Stacking_Conditions/SHRD/Modify/SHRD_Add" to="." method="_on_shrd_add_pressed"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Stacking_Conditions/SHRD/Modify/SHRD_Sub" to="." method="_on_shrd_sub_pressed"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Stacking_Conditions/FCS/FCS_Toggle" to="." method="_on_fcs_toggle_toggled"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Stacking_Conditions/FCS/Modify/FCS_Add" to="." method="_on_fcs_add_pressed"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Stacking_Conditions/FCS/Modify/FCS_Sub" to="." method="_on_fcs_sub_pressed"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Stacking_Conditions/SCK/SCK_Toggle" to="." method="_on_sck_toggle_toggled"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Stacking_Conditions/SCK/Modify/SCK_Add" to="." method="_on_sck_add_pressed"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Stacking_Conditions/SCK/Modify/SCK_Sub" to="." method="_on_sck_sub_pressed"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Stacking_Conditions/WND/WND_Toggle" to="." method="_on_wnd_toggle_toggled"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Stacking_Conditions/WND/Modify/WND_Add" to="." method="_on_wnd_add_pressed"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Stacking_Conditions/WND/Modify/WND_Sub" to="." method="_on_wnd_sub_pressed"]
+[connection signal="toggled" from="Mini_Popup/Body/Top/Stacking_Conditions/DST/DST_Toggle" to="." method="_on_dst_toggle_toggled"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Stacking_Conditions/DST/Modify/DST_Add" to="." method="_on_dst_add_pressed"]
+[connection signal="pressed" from="Mini_Popup/Body/Top/Stacking_Conditions/DST/Modify/DST_Sub" to="." method="_on_dst_sub_pressed"]

@@ -1,0 +1,40 @@
+{
+	"name": "Moonshiner",
+	"icon": "Class_300_Icon.png",
+	"avatar": "Class_300_Avatar.png",
+	"color": [0.5, 0.5, 0.5, 1],
+	"stat_block": {
+		"0": {"HP": 6, "AP": 4, "SP": 0},
+		"1": {"HP": 6, "AP": 5, "SP": 0},
+		"2": {"HP": 7, "AP": 5, "SP": 0},
+		"3": {"HP": 7, "AP": 6, "SP": 0},
+		"4": {"HP": 8, "AP": 6, "SP": 0},
+		"5": {"HP": 10, "AP": 8, "SP": 2},
+		"6": {"HP": 10, "AP": 9, "SP": 2},
+		"7": {"HP": 11, "AP": 9, "SP": 2},
+		"8": {"HP": 11, "AP": 10, "SP": 2},
+		"9": {"HP": 12, "AP": 10, "SP": 2},
+		"10": {"HP": 14, "AP": 12, "SP": 4},
+		"11": {"HP": 14, "AP": 13, "SP": 4},
+		"12": {"HP": 15, "AP": 13, "SP": 4},
+		"13": {"HP": 15, "AP": 14, "SP": 4},
+		"14": {"HP": 16, "AP": 14, "SP": 4},
+		"15": {"HP": 18, "AP": 16, "SP": 6},
+		"16": {"HP": 18, "AP": 17, "SP": 6},
+		"17": {"HP": 19, "AP": 17, "SP": 6},
+		"18": {"HP": 19, "AP": 18, "SP": 6},
+		"19": {"HP": 20, "AP": 18, "SP": 6},
+		"20": {"HP": 22, "AP": 20, "SP": 8}},
+	"skill_block": [
+		{"cost": 0, "effect": "+HP"},
+		{"cost": 0, "effect": "+AP"},
+		{"cost": 0, "effect": "+SP"},
+		{"cost": 0, "effect": "Text here."}
+	],
+	"ability_block": {
+		"0": {"A": "Option A Description"},
+		"5": {"A": "Option A Description", "B": "Option B Description"},
+		"10": {"A": "Option A Description", "B": "Option B Description"},
+		"15": {"A": "Option A Description", "B": "Option B Description"},
+		"20": {"A": "Option A Description"}}
+}

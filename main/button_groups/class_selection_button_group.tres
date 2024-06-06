@@ -1,0 +1,5 @@
+[gd_resource type="ButtonGroup" format=3 uid="uid://brlfp01f13ag2"]
+
+[resource]
+resource_name = "class_selection_button_group"
+allow_unpress = true
